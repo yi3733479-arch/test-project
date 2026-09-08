@@ -1,0 +1,487 @@
+<title>왕십리 맛집 리포트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --paper: #f1e9dc;
+    --paper-alt: #e8dcc8;
+    --paper-alt-2: #ddceb3;
+    --ink: #2b211b;
+    --ink-soft: #5b4b3c;
+    --ink-faint: #8a7a67;
+    --clay: #a85a1c;
+    --clay-strong: #8e4813;
+    --moss: #5e6b47;
+    --gold: #a3791c;
+    --line: #d9cbb3;
+    --card-shadow: 0 1px 0 rgba(43, 33, 27, 0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1c1611;
+      --paper-alt: #251d17;
+      --paper-alt-2: #2e241c;
+      --ink: #f0e6d6;
+      --ink-soft: #c2ac8e;
+      --ink-faint: #8d7860;
+      --clay: #e08a45;
+      --clay-strong: #f0a05f;
+      --moss: #9caf78;
+      --gold: #e0b84b;
+      --line: #3c3025;
+      --card-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #1c1611;
+    --paper-alt: #251d17;
+    --paper-alt-2: #2e241c;
+    --ink: #f0e6d6;
+    --ink-soft: #c2ac8e;
+    --ink-faint: #8d7860;
+    --clay: #e08a45;
+    --clay-strong: #f0a05f;
+    --moss: #9caf78;
+    --gold: #e0b84b;
+    --line: #3c3025;
+    --card-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
+    line-height: 1.6;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 5rem;
+  }
+
+  /* ---------- Header ---------- */
+
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding-bottom: 2.4rem;
+    margin-bottom: 2.6rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--clay-strong);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 22px;
+    height: 1px;
+    background: var(--clay-strong);
+    display: inline-block;
+  }
+
+  h1 {
+    font-family: "Gowun Batang", "Noto Serif KR", serif;
+    font-weight: 700;
+    font-size: clamp(1.9rem, 4.2vw, 2.7rem);
+    margin: 0;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+
+  .lede {
+    max-width: 62ch;
+    color: var(--ink-soft);
+    font-size: 1rem;
+  }
+
+  .lede b { color: var(--ink); font-weight: 600; }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    margin-top: 0.4rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+  }
+
+  .meta-row strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ---------- Section labels ---------- */
+
+  .section-label {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    margin: 0 0 1.4rem;
+  }
+
+  .section-label h2 {
+    font-family: "Gowun Batang", serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .section-label span {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+  }
+
+  /* ---------- Top 5 cards ---------- */
+
+  .top5 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.1rem;
+    margin-bottom: 3.4rem;
+  }
+
+  .card {
+    background: var(--paper-alt);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 1.5rem 1.4rem 1.4rem;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .card:hover {
+    border-color: var(--clay);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -14px rgba(43, 33, 27, 0.35);
+  }
+
+  .card:first-child {
+    background: linear-gradient(155deg, var(--paper-alt-2), var(--paper-alt));
+    border-color: var(--clay);
+  }
+
+  .card .go {
+    margin-top: auto;
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--line);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: var(--ink-faint);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: color 0.15s ease;
+  }
+
+  .card:hover .go { color: var(--clay-strong); }
+
+  .card .go .arrow {
+    transition: transform 0.15s ease;
+  }
+
+  .card:hover .go .arrow { transform: translateX(3px); }
+
+  .rank {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--clay-strong);
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .rank .num {
+    font-size: 1.9rem;
+    font-weight: 600;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .rank .badge {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--moss);
+    border: 1px solid var(--moss);
+    border-radius: 2px;
+    padding: 0.15rem 0.4rem;
+  }
+
+  .card h3 {
+    font-family: "Gowun Batang", serif;
+    font-size: 1.32rem;
+    font-weight: 700;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .category {
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+    margin-top: -0.5rem;
+  }
+
+  .stat-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    padding: 0.55rem 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .stat-row:first-of-type { border-top: none; padding-top: 0; }
+
+  .stat-row .label {
+    font-family: "Noto Sans KR", sans-serif;
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+  }
+
+  .stat-row .value {
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .stat-row .value.gold { color: var(--gold); }
+  .stat-row .value.moss { color: var(--moss); }
+
+  address {
+    font-style: normal;
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Full list table ---------- */
+
+  .table-scroll {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.86rem;
+    min-width: 640px;
+  }
+
+  thead th {
+    text-align: left;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    background: var(--paper-alt);
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+  }
+
+  tbody td {
+    padding: 0.6rem 0.9rem;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-soft);
+    vertical-align: top;
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  tbody tr.highlight td { color: var(--ink); background: var(--paper-alt); }
+
+  td.rk {
+    font-family: "IBM Plex Mono", monospace;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  td.name { color: var(--ink); font-weight: 500; }
+
+  td.num {
+    font-family: "IBM Plex Mono", monospace;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  tr.highlight td.num { color: var(--clay-strong); font-weight: 600; }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, .card:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Kakao Map · 왕십리 맛집 검색</div>
+    <h1>왕십리 골목, 리뷰가 몰린 다섯 곳</h1>
+    <p class="lede">
+      카카오맵에서 <b>"왕십리 맛집"</b>으로 검색한 상위 20곳의 평점·리뷰·주소를 모았다.
+      그중 블로그 리뷰 수가 가장 많은 다섯 곳을 먼저 꺼내 놓는다 — 왕십리 옛 가마터 골목처럼,
+      오래 구워지고 오래 쌓인 후기부터.
+    </p>
+    <div class="meta-row">
+      <span>검색어 <strong>왕십리 맛집</strong></span>
+      <span>수집 <strong>상위 20곳</strong></span>
+      <span>정렬 기준 <strong>블로그 리뷰 수</strong></span>
+      <span>기준일 <strong>2026-09-07</strong></span>
+    </div>
+  </header>
+
+  <section aria-labelledby="top5-h">
+    <div class="section-label">
+      <h2 id="top5-h">리뷰 수 TOP 5</h2>
+      <span>20곳 중 블로그 리뷰 건수 기준 상위 5곳</span>
+    </div>
+
+    <div class="top5">
+      <a class="card" href="https://place.map.kakao.com/1008906128" target="_blank" rel="noopener noreferrer" aria-label="카카오맵에서 만배아리랑보쌈 왕십리점 보기">
+        <div class="rank"><span class="num">01</span><span class="badge">최다 리뷰</span></div>
+        <h3>만배아리랑보쌈 왕십리점</h3>
+        <p class="category">족발 · 보쌈</p>
+        <div class="stat-row"><span class="label">평점</span><span class="value gold">★ 3.1</span></div>
+        <div class="stat-row"><span class="label">리뷰 수</span><span class="value">746건</span></div>
+        <address>서울 성동구 무학봉28길 8 유형빌딩 1층</address>
+        <div class="go">카카오맵에서 보기<span class="arrow">→</span></div>
+      </a>
+
+      <a class="card" href="https://place.map.kakao.com/142477401" target="_blank" rel="noopener noreferrer" aria-label="카카오맵에서 왕십리 육감식당 본점 보기">
+        <div class="rank"><span class="num">02</span></div>
+        <h3>왕십리 육감식당 본점</h3>
+        <p class="category">삼겹살</p>
+        <div class="stat-row"><span class="label">평점</span><span class="value gold">★ 4.3</span></div>
+        <div class="stat-row"><span class="label">리뷰 수</span><span class="value">362건</span></div>
+        <address>서울 성동구 무학봉28길 1 1층</address>
+        <div class="go">카카오맵에서 보기<span class="arrow">→</span></div>
+      </a>
+
+      <a class="card" href="https://place.map.kakao.com/84074105" target="_blank" rel="noopener noreferrer" aria-label="카카오맵에서 육성 보기">
+        <div class="rank"><span class="num">03</span></div>
+        <h3>육성</h3>
+        <p class="category">육류 · 고기</p>
+        <div class="stat-row"><span class="label">평점</span><span class="value gold">★ 5.0</span></div>
+        <div class="stat-row"><span class="label">리뷰 수</span><span class="value">226건</span></div>
+        <address>서울 성동구 무학봉길 97 1층</address>
+        <div class="go">카카오맵에서 보기<span class="arrow">→</span></div>
+      </a>
+
+      <a class="card" href="https://place.map.kakao.com/12265333" target="_blank" rel="noopener noreferrer" aria-label="카카오맵에서 왕십리조개창고 보기">
+        <div class="rank"><span class="num">04</span></div>
+        <h3>왕십리조개창고</h3>
+        <p class="category">조개</p>
+        <div class="stat-row"><span class="label">평점</span><span class="value gold">★ 2.5</span></div>
+        <div class="stat-row"><span class="label">리뷰 수</span><span class="value">222건</span></div>
+        <address>서울 성동구 왕십리로 331 경진빌딩 지하1층</address>
+        <div class="go">카카오맵에서 보기<span class="arrow">→</span></div>
+      </a>
+
+      <a class="card" href="https://place.map.kakao.com/75699281" target="_blank" rel="noopener noreferrer" aria-label="카카오맵에서 청신리 보기">
+        <div class="rank"><span class="num">05</span></div>
+        <h3>청신리</h3>
+        <p class="category">한식</p>
+        <div class="stat-row"><span class="label">평점</span><span class="value gold">★ 4.7</span></div>
+        <div class="stat-row"><span class="label">리뷰 수</span><span class="value">129건</span></div>
+        <address>서울 성동구 무학봉26길 7 녹색섬유빌딩 1층</address>
+        <div class="go">카카오맵에서 보기<span class="arrow">→</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section aria-labelledby="all20-h">
+    <div class="section-label">
+      <h2 id="all20-h">수집한 20곳 전체</h2>
+      <span>카카오맵 정확도순 노출 순서</span>
+    </div>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">순위</th>
+            <th scope="col">이름</th>
+            <th scope="col">평점</th>
+            <th scope="col">리뷰 수</th>
+            <th scope="col">주소</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight"><td class="rk">1</td><td class="name">왕십리 육감식당 본점</td><td class="num">4.3</td><td class="num">362건</td><td>서울 성동구 무학봉28길 1 1층</td></tr>
+          <tr><td class="rk">2</td><td class="name">김승현스시 왕십리점</td><td class="num">2.8</td><td class="num">58건</td><td>서울 성동구 왕십리로 331 1층</td></tr>
+          <tr><td class="rk">3</td><td class="name">돌삼겹나들목</td><td class="num">5.0</td><td class="num">6건</td><td>서울 성동구 왕십리로 357 2층</td></tr>
+          <tr><td class="rk">4</td><td class="name">홍고추장삼겹살 왕십리점</td><td class="num">4.2</td><td class="num">23건</td><td>서울 성동구 왕십리로 347 1층</td></tr>
+          <tr><td class="rk">5</td><td class="name">산수골 본점</td><td class="num">3.5</td><td class="num">16건</td><td>서울 성동구 왕십리로31가길 31 1층</td></tr>
+          <tr><td class="rk">6</td><td class="name">파리바게뜨 왕십리무학점</td><td class="num">3.3</td><td class="num">2건</td><td>서울 성동구 왕십리로 355 1층</td></tr>
+          <tr><td class="rk">7</td><td class="name">전풍호텔라운지</td><td class="num">3.4</td><td class="num">87건</td><td>서울 성동구 무학봉28길 7 1층</td></tr>
+          <tr><td class="rk">8</td><td class="name">일일향</td><td class="num">2.6</td><td class="num">47건</td><td>서울 성동구 왕십리로 345 1·2층</td></tr>
+          <tr><td class="rk">9</td><td class="name">산고을칼국수</td><td class="num">3.9</td><td class="num">13건</td><td>서울 성동구 무학봉15길 26 1층</td></tr>
+          <tr class="highlight"><td class="rk">10</td><td class="name">왕십리조개창고</td><td class="num">2.5</td><td class="num">222건</td><td>서울 성동구 왕십리로 331 경진빌딩 지하1층</td></tr>
+          <tr class="highlight"><td class="rk">11</td><td class="name">육성</td><td class="num">5.0</td><td class="num">226건</td><td>서울 성동구 무학봉길 97 1층</td></tr>
+          <tr><td class="rk">12</td><td class="name">오루베</td><td class="num">4.7</td><td class="num">49건</td><td>서울 성동구 왕십리로31길 8</td></tr>
+          <tr><td class="rk">13</td><td class="name">너찜했닭</td><td class="num">4.1</td><td class="num">16건</td><td>서울 성동구 무학봉15길 27-3 1층</td></tr>
+          <tr><td class="rk">14</td><td class="name">감락</td><td class="num">4.9</td><td class="num">53건</td><td>서울 성동구 무학봉15길 10-1 1층</td></tr>
+          <tr class="highlight"><td class="rk">15</td><td class="name">청신리</td><td class="num">4.7</td><td class="num">129건</td><td>서울 성동구 무학봉26길 7 녹색섬유빌딩 1층</td></tr>
+          <tr><td class="rk">16</td><td class="name">리빠똥 본점</td><td class="num">4.0</td><td class="num">17건</td><td>서울 성동구 왕십리로 357 2층</td></tr>
+          <tr><td class="rk">17</td><td class="name">블루제이커피스페이스</td><td class="num">4.3</td><td class="num">113건</td><td>서울 성동구 무학봉15길 20 1층</td></tr>
+          <tr><td class="rk">18</td><td class="name">진순대곰탕 둘째아들 직영점</td><td class="num">5.0</td><td class="num">2건</td><td>서울 성동구 무학봉길 97-1 1층</td></tr>
+          <tr class="highlight"><td class="rk">19</td><td class="name">만배아리랑보쌈 왕십리점</td><td class="num">3.1</td><td class="num">746건</td><td>서울 성동구 무학봉28길 8 유형빌딩 1층</td></tr>
+          <tr><td class="rk">20</td><td class="name">무프아파트먼트</td><td class="num">4.4</td><td class="num">101건</td><td>서울 성동구 무학봉길 82 1~3층, 루프탑</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <span>출처: 카카오맵(map.kakao.com) "왕십리 맛집" 검색 결과, 정확도순 상위 20곳</span>
+    <span>· 리뷰 수는 블로그 리뷰 건수 기준 (별점 참여 리뷰 건수와는 별도 지표)</span>
+  </footer>
+</div>
