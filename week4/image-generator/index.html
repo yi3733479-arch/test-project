@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Imagine</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <!-- ⚠️ 모든 CDN 버전 고정: Babel 은 반드시 7.x (8.x는 인라인 text/babel 처리가 깨짐) -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone@7.25.9/babel.min.js"></script>
+  <style>
+    @keyframes pop-in { from { opacity: 0; transform: scale(0.96) translateY(6px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+    @keyframes toast-in { from { opacity: 0; transform: translate(-50%, 8px); } to { opacity: 1; transform: translate(-50%, 0); } }
+    @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+    .animate-pop-in { animation: pop-in 0.25s ease-out; }
+    .animate-toast-in { animation: toast-in 0.2s ease-out; }
+    .skeleton-shimmer {
+      background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.09) 37%, rgba(255,255,255,0.04) 63%);
+      background-size: 400% 100%;
+      animation: shimmer 1.6s ease-in-out infinite;
+    }
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 9999px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+  </style>
+</head>
+<body class="bg-zinc-950">
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useMemo, useCallback, useRef, useEffect } = React;
+
+    // ========================================
+    // 📦 Constants
+    // 실제 이미지는 이 프로젝트의 자체 서버(server.js)가 fal.ai(FLUX) API를
+    // 대신 호출해서 만들어줍니다. fal.ai API 키는 서버(.env)에만 있고
+    // 브라우저 쪽 코드에는 절대 들어있지 않습니다.
+    // ========================================
+    const API_BASE = '/api';
+
+    const ASPECTS = {
+      '1:1': { w: 1, h: 1, label: '정사각형' },
+      '16:9': { w: 16, h: 9, label: '와이드' },
+      '9:16': { w: 9, h: 16, label: '세로' },
+      '4:5': { w: 4, h: 5, label: '포트레이트' },
+    };
+
+    const STYLES = {
+      vivid: { label: '선명함' },
+      anime: { label: '애니메이션' },
+      photo: { label: '사진풍' },
+      fantasy: { label: '판타지' },
+    };
+
+    const SAMPLE_PROMPTS = [
+      '네온 불빛이 반사되는 비 오는 밤의 사이버펑크 도시, 시네마틱 조명',
+      '구름 위에 떠 있는 미래 도시, 노을빛, 초현실적인 풍경',
+      '뿔에 별빛이 감도는 숲속의 신비로운 사슴, 판타지 아트',
+      '따뜻한 아침 햇살이 드는 파리의 카페 골목, 수채화 스타일',
+      '심해에서 빛나는 거대한 고래, 발광 플랑크톤, 몽환적인 분위기',
+      '은하수를 배경으로 우주를 유영하는 우주비행사, 디지털 아트',
+      '벚꽃이 흩날리는 일본 전통 정원, 연못 속 잉어, 지브리풍',
+      '모래폭풍이 몰아치는 사막의 버려진 로봇, 포스트 아포칼립스',
+    ];
+
+    // ========================================
+    // 🛠 Utility Helpers
+    // ========================================
+    async function fetchJson(url, options) {
+      const res = await fetch(url, options);
+      const body = await res.json().catch(() => null);
+      if (!res.ok || !body || body.success === false) {
+        throw new Error((body && body.message) || '서버 요청에 실패했습니다');
+      }
+      return body.data;
+    }
+
+    function triggerDownload(image) {
+      const params = new URLSearchParams({ url: image.url, filename: `nova-imagine-${image.id}` });
+      const a = document.createElement('a');
+      a.href = `${API_BASE}/download?${params.toString()}`;
+      a.download = `nova-imagine-${image.id}.png`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    }
+
+    // ========================================
+    // 🎨 Design System Components
+    // ========================================
+    function Button({ children, variant = 'primary', size = 'md', disabled = false, onClick, className = '', type = 'button', title }) {
+      const base = 'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-950 disabled:opacity-40 disabled:cursor-not-allowed';
+      const variants = {
+        primary: 'bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white hover:from-violet-500 hover:to-fuchsia-500 focus:ring-violet-500',
+        secondary: 'bg-zinc-800 text-zinc-100 border border-zinc-700 hover:bg-zinc-700 focus:ring-zinc-500',
+        ghost: 'bg-transparent text-zinc-400 hover:bg-zinc-800/70 hover:text-zinc-100 focus:ring-zinc-600',
+        danger: 'bg-rose-600/90 text-white hover:bg-rose-500 focus:ring-rose-400',
+      };
+      const sizes = { sm: 'px-3 py-1.5 text-xs gap-1', md: 'px-4 py-2.5 text-sm gap-1.5', lg: 'px-5 py-3 text-base gap-2' };
+      return (
+        <button type={type} disabled={disabled} onClick={onClick} title={title} className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}>
+          {children}
+        </button>
+      );
+    }
+
+    function IconButton({ children, onClick, title, className = '' }) {
+      return (
+        <button
+          type="button"
+          onClick={onClick}
+          title={title}
+          aria-label={title}
+          className={`inline-flex h-8 w-8 items-center justify-center rounded-lg bg-black/50 text-zinc-100 backdrop-blur transition hover:bg-black/70 focus:outline-none focus:ring-2 focus:ring-violet-500 ${className}`}
+        >
+          {children}
+        </button>
+      );
+    }
+
+    function Textarea({ value, onChange, onKeyDown, placeholder, className = '' }) {
+      return (
+        <textarea
+          value={value}
+          onChange={onChange}
+          onKeyDown={onKeyDown}
+          placeholder={placeholder}
+          rows={2}
+          className={`w-full resize-none rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm text-zinc-100 placeholder-zinc-500 shadow-inner transition focus:border-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-500/40 ${className}`}
+        />
+      );
+    }
+
+    function SegmentedControl({ options, value, onChange, className = '' }) {
+      return (
+        <div className={`inline-flex flex-wrap gap-1 rounded-xl bg-zinc-900 p-1 ring-1 ring-zinc-800 ${className}`}>
+          {options.map((opt) => (
+            <button
+              key={opt.value}
+              type="button"
+              onClick={() => onChange(opt.value)}
+              className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition ${
+                value === opt.value ? 'bg-violet-600 text-white shadow' : 'text-zinc-400 hover:bg-zinc-800 hover:text-zinc-100'
+              }`}
+            >
+              {opt.label}
+            </button>
+          ))}
+        </div>
+      );
+    }
+
+    function Card({ children, className = '' }) {
+      return <div className={`rounded-2xl bg-zinc-900/70 ring-1 ring-zinc-800 ${className}`}>{children}</div>;
+    }
+
+    function Badge({ children, className = '' }) {
+      return (
+        <span className={`inline-flex items-center rounded-full bg-zinc-800 px-2.5 py-1 text-[11px] font-semibold text-zinc-300 ring-1 ring-zinc-700 ${className}`}>
+          {children}
+        </span>
+      );
+    }
+
+    function Spinner({ className = 'h-5 w-5' }) {
+      return (
+        <svg className={`animate-spin text-violet-400 ${className}`} viewBox="0 0 24 24" fill="none">
+          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+        </svg>
+      );
+    }
+
+    function Modal({ isOpen, onClose, children }) {
+      useEffect(() => {
+        if (!isOpen) return;
+        const handleKeyDown = (e) => { if (e.key === 'Escape') onClose(); };
+        document.addEventListener('keydown', handleKeyDown);
+        document.body.style.overflow = 'hidden';
+        return () => {
+          document.removeEventListener('keydown', handleKeyDown);
+          document.body.style.overflow = '';
+        };
+      }, [isOpen, onClose]);
+
+      if (!isOpen) return null;
+
+      return (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4" onClick={onClose} role="dialog" aria-modal="true">
+          <div onClick={(e) => e.stopPropagation()} className="animate-pop-in max-h-[90vh] w-full max-w-3xl overflow-hidden rounded-2xl bg-zinc-900 ring-1 ring-zinc-700">
+            {children}
+          </div>
+        </div>
+      );
+    }
+
+    function Toast({ message }) {
+      if (!message) return null;
+      return (
+        <div className="animate-toast-in fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-full bg-zinc-100 px-4 py-2 text-xs font-semibold text-zinc-900 shadow-lg">
+          {message}
+        </div>
+      );
+    }
+
+    // ========================================
+    // 🧩 Layout Components
+    // ========================================
+    function Header() {
+      return (
+        <header className="sticky top-0 z-30 border-b border-zinc-800/80 bg-zinc-950/90 backdrop-blur">
+          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
+            <div className="flex items-center gap-2">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 text-base font-black text-white shadow-lg">
+                N
+              </div>
+              <div>
+                <h1 className="text-base font-extrabold tracking-tight text-zinc-50 sm:text-lg">Nova Imagine</h1>
+                <p className="text-[11px] text-zinc-500">AI 이미지 생성 스튜디오</p>
+              </div>
+            </div>
+            <Badge className="hidden sm:inline-flex">fal.ai (FLUX) 실시간 생성</Badge>
+          </div>
+        </header>
+      );
+    }
+
+    function Footer() {
+      return (
+        <footer className="mx-auto max-w-6xl px-4 py-10 text-center text-[11px] text-zinc-600 sm:px-6">
+          이미지는 자체 서버(<code className="rounded bg-zinc-800 px-1 py-0.5">server.js</code>)를 통해 fal.ai(FLUX) API로 실시간 생성됩니다.
+          API 키는 서버에만 저장되며 브라우저로 전달되지 않습니다.
+        </footer>
+      );
+    }
+
+    // ========================================
+    // 📄 Page Components
+    // ========================================
+    function Composer({ promptText, onPromptChange, aspect, onAspectChange, style, onStyleChange, onSubmit, onRandomPrompt, isBusy }) {
+      const handleKeyDown = (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+          e.preventDefault();
+          onSubmit();
+        }
+      };
+
+      return (
+        <Card className="p-4 sm:p-5">
+          <Textarea
+            value={promptText}
+            onChange={(e) => onPromptChange(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="상상하는 이미지를 설명해보세요. 예) 노을 지는 해변을 걷는 로봇, 시네마틱 조명"
+          />
+          <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-wrap items-center gap-2">
+              <SegmentedControl
+                options={Object.keys(ASPECTS).map((value) => ({ value, label: value }))}
+                value={aspect}
+                onChange={onAspectChange}
+              />
+              <SegmentedControl
+                options={Object.entries(STYLES).map(([value, cfg]) => ({ value, label: cfg.label }))}
+                value={style}
+                onChange={onStyleChange}
+              />
+            </div>
+            <div className="flex items-center gap-2">
+              <Button variant="ghost" size="sm" onClick={onRandomPrompt}>🎲 랜덤 프롬프트</Button>
+              <Button variant="primary" onClick={onSubmit} disabled={isBusy || !promptText.trim()}>
+                {isBusy ? <Spinner className="h-4 w-4" /> : '✨ 생성하기'}
+              </Button>
+            </div>
+          </div>
+        </Card>
+      );
+    }
+
+    function ImageTile({ image, aspectKey, onOpen, onDownload, onVariation }) {
+      const cfg = ASPECTS[aspectKey];
+      return (
+        <div
+          className="group relative cursor-pointer overflow-hidden rounded-xl bg-zinc-800 ring-1 ring-zinc-800"
+          style={{ aspectRatio: `${cfg.w} / ${cfg.h}` }}
+          onClick={() => onOpen(image)}
+        >
+          <img src={image.url} alt="생성된 이미지" loading="lazy" className="h-full w-full object-cover transition duration-200 group-hover:scale-105" />
+          <div className="absolute inset-0 flex items-end justify-end gap-1.5 bg-gradient-to-t from-black/60 via-transparent to-transparent p-2 opacity-0 transition group-hover:opacity-100">
+            <IconButton title="다운로드" onClick={(e) => { e.stopPropagation(); onDownload(image); }}>⬇</IconButton>
+            <IconButton title="베리에이션 만들기" onClick={(e) => { e.stopPropagation(); onVariation(image); }}>🔀</IconButton>
+          </div>
+        </div>
+      );
+    }
+
+    function SkeletonGrid({ aspectKey }) {
+      const cfg = ASPECTS[aspectKey];
+      return (
+        <div className="grid grid-cols-2 gap-2">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <div key={i} className="skeleton-shimmer rounded-xl" style={{ aspectRatio: `${cfg.w} / ${cfg.h}` }} />
+          ))}
+        </div>
+      );
+    }
+
+    function GenerationBatch({ batch, onOpenImage, onDownload, onVariation, onRegenerate, onDelete, onCopyPrompt }) {
+      const timeLabel = new Date(batch.createdAt).toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' });
+      return (
+        <Card className="animate-pop-in p-4 sm:p-5">
+          <div className="mb-3 flex items-start justify-between gap-3">
+            <div className="min-w-0">
+              <p className="line-clamp-2 text-sm font-medium text-zinc-100">{batch.prompt}</p>
+              <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
+                <Badge>{STYLES[batch.style].label}</Badge>
+                <Badge>{batch.aspect}</Badge>
+                {batch.variationOf && <Badge>변형본</Badge>}
+                <span className="text-[11px] text-zinc-500">{timeLabel}</span>
+              </div>
+            </div>
+            <div className="flex shrink-0 items-center gap-1">
+              <IconButton title="프롬프트 복사" className="static bg-zinc-800 hover:bg-zinc-700" onClick={() => onCopyPrompt(batch.prompt)}>📋</IconButton>
+              <IconButton title="삭제" className="static bg-zinc-800 hover:bg-rose-600" onClick={() => onDelete(batch.id)}>✕</IconButton>
+            </div>
+          </div>
+
+          {batch.status === 'loading' && <SkeletonGrid aspectKey={batch.aspect} />}
+
+          {batch.status === 'error' && (
+            <div className="flex flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-rose-900/60 bg-rose-950/20 py-10 text-center">
+              <p className="text-sm font-medium text-rose-400">{batch.errorMessage || '이미지 생성에 실패했습니다'}</p>
+              <Button variant="secondary" size="sm" onClick={() => onRegenerate(batch)}>다시 시도</Button>
+            </div>
+          )}
+
+          {batch.status === 'done' && (
+            <div className="grid grid-cols-2 gap-2">
+              {batch.images.map((img) => (
+                <ImageTile
+                  key={img.id}
+                  image={img}
+                  aspectKey={batch.aspect}
+                  onOpen={(image) => onOpenImage(batch, image)}
+                  onDownload={onDownload}
+                  onVariation={(image) => onVariation(batch, image)}
+                />
+              ))}
+            </div>
+          )}
+
+          {batch.status !== 'error' && (
+            <div className="mt-3 flex justify-end">
+              <Button variant="secondary" size="sm" onClick={() => onRegenerate(batch)} disabled={batch.status === 'loading'}>
+                🔄 다시 생성
+              </Button>
+            </div>
+          )}
+        </Card>
+      );
+    }
+
+    function Lightbox({ entry, onClose, onDownload, onVariation }) {
+      if (!entry) return null;
+      const { batch, image } = entry;
+      return (
+        <Modal isOpen={!!entry} onClose={onClose}>
+          <div className="flex max-h-[90vh] flex-col sm:flex-row">
+            <div className="flex flex-1 items-center justify-center bg-black p-2">
+              <img src={image.url} alt="생성된 이미지 확대 보기" className="max-h-[70vh] w-auto max-w-full rounded-lg object-contain" />
+            </div>
+            <div className="flex w-full flex-col gap-3 p-5 sm:w-72">
+              <p className="text-sm leading-relaxed text-zinc-200">{batch.prompt}</p>
+              <div className="flex flex-wrap gap-1.5">
+                <Badge>{STYLES[batch.style].label}</Badge>
+                <Badge>{batch.aspect}</Badge>
+              </div>
+              <div className="mt-auto flex flex-col gap-2">
+                <Button variant="primary" onClick={() => onDownload(image)}>⬇ 다운로드</Button>
+                <Button variant="secondary" onClick={() => onVariation(batch, image)}>🔀 베리에이션 만들기</Button>
+                <Button variant="ghost" onClick={onClose}>닫기</Button>
+              </div>
+            </div>
+          </div>
+        </Modal>
+      );
+    }
+
+    function EmptyState({ onRandomPrompt }) {
+      return (
+        <div className="flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-zinc-800 bg-zinc-900/40 py-20 text-center">
+          <div className="mb-3 text-4xl">🖼️</div>
+          <p className="text-sm font-medium text-zinc-300">아직 생성한 이미지가 없어요</p>
+          <p className="mt-1 text-xs text-zinc-500">프롬프트를 입력하고 생성하기를 눌러보세요</p>
+          <Button variant="secondary" size="sm" className="mt-4" onClick={onRandomPrompt}>🎲 랜덤 프롬프트로 시작하기</Button>
+        </div>
+      );
+    }
+
+    // ========================================
+    // 🚀 App Component
+    // ========================================
+    function App() {
+      const [promptText, setPromptText] = useState('');
+      const [aspect, setAspect] = useState('1:1');
+      const [style, setStyle] = useState('vivid');
+      const [batches, setBatches] = useState([]);
+      const [lightbox, setLightbox] = useState(null);
+      const [toast, setToast] = useState('');
+      const toastTimer = useRef(null);
+
+      const isBusy = useMemo(() => batches.some((b) => b.status === 'loading'), [batches]);
+
+      const showToast = useCallback((message) => {
+        setToast(message);
+        clearTimeout(toastTimer.current);
+        toastTimer.current = setTimeout(() => setToast(''), 1800);
+      }, []);
+
+      useEffect(() => () => clearTimeout(toastTimer.current), []);
+
+      // 서버(server.js)의 /api/generate 를 호출해 fal.ai(FLUX)로 실제 이미지를 생성한다
+      const createBatch = useCallback((prompt, aspectKey, styleKey, variationOf) => {
+        const id = `${Date.now()}-${Math.floor(Math.random() * 100000)}`;
+        const newBatch = { id, prompt, aspect: aspectKey, style: styleKey, status: 'loading', images: [], createdAt: Date.now(), variationOf: variationOf || null };
+        setBatches((prev) => [newBatch, ...prev]);
+
+        fetchJson(`${API_BASE}/generate`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt, aspect: aspectKey, style: styleKey }),
+        })
+          .then((data) => {
+            setBatches((prev) => prev.map((b) => (b.id === id ? { ...b, status: 'done', images: data.images } : b)));
+          })
+          .catch((err) => {
+            setBatches((prev) => prev.map((b) => (b.id === id ? { ...b, status: 'error', errorMessage: err.message } : b)));
+          });
+      }, []);
+
+      const handleSubmit = useCallback(() => {
+        const trimmed = promptText.trim();
+        if (!trimmed) return;
+        createBatch(trimmed, aspect, style);
+      }, [promptText, aspect, style, createBatch]);
+
+      const handleRandomPrompt = useCallback(() => {
+        const next = SAMPLE_PROMPTS[Math.floor(Math.random() * SAMPLE_PROMPTS.length)];
+        setPromptText(next);
+      }, []);
+
+      const handleRegenerate = useCallback((batch) => {
+        createBatch(batch.prompt, batch.aspect, batch.style);
+      }, [createBatch]);
+
+      const handleVariation = useCallback((batch, image) => {
+        createBatch(batch.prompt, batch.aspect, batch.style, image.id);
+        setLightbox(null);
+        showToast('베리에이션을 생성하고 있어요');
+      }, [createBatch, showToast]);
+
+      const handleDownload = useCallback((image) => {
+        triggerDownload(image);
+        showToast('다운로드를 시작했어요');
+      }, [showToast]);
+
+      const handleDelete = useCallback((id) => {
+        setBatches((prev) => prev.filter((b) => b.id !== id));
+      }, []);
+
+      const handleCopyPrompt = useCallback((prompt) => {
+        navigator.clipboard?.writeText(prompt).then(() => showToast('프롬프트를 복사했어요')).catch(() => {});
+      }, [showToast]);
+
+      return (
+        <div className="min-h-screen bg-zinc-950 text-zinc-100">
+          <Header />
+
+          <main className="mx-auto max-w-6xl px-4 py-6 sm:px-6">
+            <Composer
+              promptText={promptText}
+              onPromptChange={setPromptText}
+              aspect={aspect}
+              onAspectChange={setAspect}
+              style={style}
+              onStyleChange={setStyle}
+              onSubmit={handleSubmit}
+              onRandomPrompt={handleRandomPrompt}
+              isBusy={isBusy}
+            />
+
+            <div className="mt-6 space-y-5">
+              {batches.length === 0 && <EmptyState onRandomPrompt={handleRandomPrompt} />}
+              {batches.map((batch) => (
+                <GenerationBatch
+                  key={batch.id}
+                  batch={batch}
+                  onOpenImage={(b, image) => setLightbox({ batch: b, image })}
+                  onDownload={handleDownload}
+                  onVariation={handleVariation}
+                  onRegenerate={handleRegenerate}
+                  onDelete={handleDelete}
+                  onCopyPrompt={handleCopyPrompt}
+                />
+              ))}
+            </div>
+          </main>
+
+          <Footer />
+
+          <Lightbox entry={lightbox} onClose={() => setLightbox(null)} onDownload={handleDownload} onVariation={handleVariation} />
+          <Toast message={toast} />
+        </div>
+      );
+    }
+
+    // ========================================
+    // Rendering
+    // ========================================
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>

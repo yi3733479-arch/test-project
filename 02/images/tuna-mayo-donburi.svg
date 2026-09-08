@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="참치마요 덮밥 일러스트">
+  <rect width="800" height="500" fill="#F6EFE2"/>
+  <circle cx="400" cy="255" r="215" fill="#E7DCC9"/>
+
+  <!-- bowl -->
+  <circle cx="400" cy="250" r="196" fill="#33505E"/>
+  <circle cx="400" cy="250" r="178" fill="#456A7B"/>
+  <circle cx="400" cy="250" r="166" fill="#2F4A57"/>
+
+  <!-- rice -->
+  <circle cx="400" cy="250" r="158" fill="#FBFAF3"/>
+  <g fill="#EAE6D8">
+    <ellipse cx="310" cy="150" rx="13" ry="8" transform="rotate(-25 310 150)"/>
+    <ellipse cx="352" cy="128" rx="12" ry="7" transform="rotate(15 352 128)"/>
+    <ellipse cx="268" cy="200" rx="12" ry="7" transform="rotate(40 268 200)"/>
+    <ellipse cx="500" cy="152" rx="13" ry="8" transform="rotate(30 500 152)"/>
+    <ellipse cx="540" cy="205" rx="12" ry="7" transform="rotate(-20 540 205)"/>
+    <ellipse cx="286" cy="350" rx="12" ry="7" transform="rotate(-40 286 350)"/>
+    <ellipse cx="520" cy="345" rx="13" ry="8" transform="rotate(25 520 345)"/>
+    <ellipse cx="400" cy="392" rx="12" ry="7" transform="rotate(5 400 392)"/>
+  </g>
+
+  <!-- tuna mound -->
+  <path d="M243 232 q10-48 58-58 q46-24 88 2 q40 8 44 50 q10 44-28 66 q-30 34-76 24 q-52 2-72-32 q-22-24-14-52z" fill="#C98A4B"/>
+  <path d="M262 224 q12-38 54-46 q40-20 78 2 q34 8 36 42 q-24-14-54-8 q-30-12-58 2 q-32-6-56 8z" fill="#D9A05B"/>
+  <g fill="#B4763C" opacity="0.65">
+    <ellipse cx="300" cy="252" rx="20" ry="9" transform="rotate(-18 300 252)"/>
+    <ellipse cx="352" cy="286" rx="24" ry="9" transform="rotate(12 352 286)"/>
+    <ellipse cx="386" cy="238" rx="18" ry="8" transform="rotate(-8 386 238)"/>
+    <ellipse cx="318" cy="308" rx="16" ry="7" transform="rotate(22 318 308)"/>
+  </g>
+  <!-- mayo drizzle -->
+  <path d="M252 268 q30-22 58 0 t58 0 t58 0" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" opacity="0.95"/>
+  <path d="M264 306 q30-22 58 0 t58 0 t46-4" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+
+  <!-- fried egg -->
+  <ellipse cx="497" cy="299" rx="94" ry="76" fill="#FFFDF6"/>
+  <ellipse cx="497" cy="299" rx="94" ry="76" fill="none" stroke="#F1E7CF" stroke-width="3"/>
+  <ellipse cx="560" cy="256" rx="26" ry="18" fill="#FFFDF6"/>
+  <ellipse cx="440" cy="352" rx="24" ry="16" fill="#FFFDF6"/>
+  <circle cx="497" cy="296" r="38" fill="#F0A92B"/>
+  <circle cx="497" cy="296" r="38" fill="none" stroke="#DE9018" stroke-width="2"/>
+  <ellipse cx="484" cy="283" rx="12" ry="8" fill="#FFD37A" opacity="0.8" transform="rotate(-25 484 283)"/>
+
+  <!-- seaweed strips -->
+  <g fill="#243A2C">
+    <rect x="420" y="150" width="52" height="9" rx="4" transform="rotate(-14 420 150)"/>
+    <rect x="452" y="176" width="44" height="8" rx="4" transform="rotate(10 452 176)"/>
+    <rect x="392" y="176" width="40" height="8" rx="4" transform="rotate(26 392 176)"/>
+    <rect x="300" y="368" width="46" height="8" rx="4" transform="rotate(-18 300 368)"/>
+  </g>
+
+  <!-- spring onion -->
+  <g fill="none" stroke="#4C9A4A" stroke-width="6">
+    <circle cx="336" cy="176" r="10"/>
+    <circle cx="288" cy="300" r="9"/>
+    <circle cx="424" cy="392" r="10"/>
+    <circle cx="556" cy="196" r="9"/>
+    <circle cx="486" cy="404" r="9"/>
+  </g>
+
+  <!-- sesame -->
+  <g fill="#D8C79C">
+    <ellipse cx="368" cy="200" rx="6" ry="4" transform="rotate(30 368 200)"/>
+    <ellipse cx="270" cy="268" rx="6" ry="4" transform="rotate(-20 270 268)"/>
+    <ellipse cx="452" cy="128" rx="6" ry="4" transform="rotate(12 452 128)"/>
+    <ellipse cx="536" cy="376" rx="6" ry="4" transform="rotate(-35 536 376)"/>
+    <ellipse cx="352" cy="352" rx="6" ry="4" transform="rotate(48 352 352)"/>
+  </g>
+
+  <!-- chopsticks -->
+  <g transform="rotate(-28 660 120)">
+    <rect x="600" y="60" width="230" height="13" rx="6" fill="#B9793F"/>
+    <rect x="600" y="86" width="230" height="13" rx="6" fill="#A96B34"/>
+  </g>
+</svg>

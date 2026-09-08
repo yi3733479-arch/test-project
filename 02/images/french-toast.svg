@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="프렌치토스트 일러스트">
+  <rect width="800" height="500" fill="#F7F1E6"/>
+  <ellipse cx="400" cy="330" rx="300" ry="130" fill="#EBE2D2"/>
+
+  <!-- plate -->
+  <ellipse cx="400" cy="322" rx="272" ry="118" fill="#FFFFFF"/>
+  <ellipse cx="400" cy="322" rx="272" ry="118" fill="none" stroke="#DFD6C6" stroke-width="4"/>
+  <ellipse cx="400" cy="318" rx="216" ry="88" fill="#FBF8F2"/>
+  <ellipse cx="400" cy="318" rx="216" ry="88" fill="none" stroke="#E7DECE" stroke-width="3"/>
+
+  <!-- back slice -->
+  <g transform="rotate(-9 370 268)">
+    <rect x="248" y="192" width="244" height="150" rx="26" fill="#B87A38"/>
+    <rect x="248" y="186" width="244" height="150" rx="26" fill="#DCA45C"/>
+    <rect x="266" y="202" width="208" height="118" rx="18" fill="#E8B972" opacity="0.75"/>
+    <g fill="#C98E48" opacity="0.55">
+      <ellipse cx="320" cy="240" rx="26" ry="14" transform="rotate(-12 320 240)"/>
+      <ellipse cx="410" cy="286" rx="30" ry="15" transform="rotate(8 410 286)"/>
+      <ellipse cx="440" cy="228" rx="20" ry="11" transform="rotate(-20 440 228)"/>
+    </g>
+  </g>
+
+  <!-- front slice -->
+  <g transform="rotate(7 440 300)">
+    <rect x="318" y="230" width="248" height="152" rx="26" fill="#A96C2E"/>
+    <rect x="318" y="222" width="248" height="152" rx="26" fill="#D89A4E"/>
+    <rect x="336" y="238" width="212" height="120" rx="18" fill="#EBBC72" opacity="0.8"/>
+    <g fill="#BE8038" opacity="0.55">
+      <ellipse cx="392" cy="278" rx="28" ry="14" transform="rotate(10 392 278)"/>
+      <ellipse cx="490" cy="318" rx="26" ry="13" transform="rotate(-14 490 318)"/>
+      <ellipse cx="452" cy="256" rx="18" ry="10" transform="rotate(22 452 256)"/>
+      <ellipse cx="366" cy="336" rx="22" ry="11" transform="rotate(-6 366 336)"/>
+    </g>
+  </g>
+
+  <!-- butter -->
+  <g transform="rotate(7 440 250)">
+    <rect x="400" y="222" width="86" height="52" rx="8" fill="#F7DE96"/>
+    <rect x="400" y="222" width="86" height="16" rx="7" fill="#FCEEBE"/>
+    <rect x="400" y="262" width="86" height="12" rx="6" fill="#E9C971"/>
+  </g>
+
+  <!-- honey drizzle -->
+  <path d="M336 246 q28 26 66 12 q46-16 78 10 q40 24 78 4" fill="none" stroke="#E5A227" stroke-width="12" stroke-linecap="round" opacity="0.9"/>
+  <path d="M348 288 q34 26 74 10 q44-18 82 12" fill="none" stroke="#EFB03C" stroke-width="9" stroke-linecap="round" opacity="0.85"/>
+  <g fill="#E5A227">
+    <path d="M330 250 q-10 26 0 38 q12 10 18-4 q6-18-8-34z"/>
+    <path d="M556 268 q-8 22 2 32 q11 8 15-5 q4-15-9-27z" opacity="0.9"/>
+  </g>
+
+  <!-- berries -->
+  <g>
+    <circle cx="238" cy="352" r="24" fill="#C23B52"/>
+    <circle cx="230" cy="344" r="8" fill="#E0637A" opacity="0.7"/>
+    <circle cx="278" cy="382" r="19" fill="#A82F49"/>
+    <circle cx="596" cy="360" r="22" fill="#B93450"/>
+    <circle cx="589" cy="352" r="7" fill="#DE6079" opacity="0.7"/>
+  </g>
+
+  <!-- mint -->
+  <g fill="#4A9146">
+    <path d="M556 318 q40-34 72-14 q-14 38-50 38 q-26 0-22-24z"/>
+    <path d="M552 322 q-24-40 4-62 q30 20 22 54 q-6 22-26 8z" fill="#3E8039"/>
+  </g>
+
+  <!-- cinnamon dust -->
+  <g fill="#8A5A2B" opacity="0.55">
+    <circle cx="368" cy="222" r="4"/>
+    <circle cx="428" cy="200" r="3"/>
+    <circle cx="500" cy="238" r="3.5"/>
+    <circle cx="392" cy="352" r="3.5"/>
+    <circle cx="470" cy="368" r="3"/>
+    <circle cx="318" cy="300" r="3"/>
+    <circle cx="540" cy="300" r="3.5"/>
+  </g>
+</svg>

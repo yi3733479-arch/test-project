@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>할일 목록</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <!-- ⚠️ 모든 CDN 버전 고정: Babel 은 반드시 7.x (8.x는 인라인 text/babel 처리가 깨짐) -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone@7.25.9/babel.min.js"></script>
+</head>
+<body class="bg-slate-50 min-h-screen">
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useEffect, useCallback } = React;
+
+    // ========================================
+    // 📡 API
+    // ========================================
+    const API_BASE_URL = '/api';
+
+    async function apiRequest(path, options) {
+      const res = await fetch(`${API_BASE_URL}${path}`, {
+        headers: { 'Content-Type': 'application/json' },
+        ...options,
+      });
+      const json = await res.json().catch(() => null);
+      if (!res.ok || !json || json.success === false) {
+        throw new Error((json && json.message) || '요청에 실패했습니다');
+      }
+      return json.data;
+    }
+
+    // ========================================
+    // 🎨 Design System Components
+    // ========================================
+    function Button({ variant = 'primary', size = 'md', disabled, onClick, className = '', children, type = 'button' }) {
+      const base = 'inline-flex items-center justify-center font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-1 disabled:opacity-50 disabled:cursor-not-allowed';
+      const variants = {
+        primary: 'bg-indigo-600 text-white hover:bg-indigo-700 focus:ring-indigo-500',
+        secondary: 'bg-white text-slate-700 border border-slate-300 hover:bg-slate-50 focus:ring-slate-400',
+        danger: 'bg-red-50 text-red-600 hover:bg-red-100 focus:ring-red-400',
+        ghost: 'bg-transparent text-slate-500 hover:bg-slate-100 focus:ring-slate-300',
+      };
+      const sizes = { sm: 'px-2.5 py-1.5 text-sm', md: 'px-4 py-2 text-sm', lg: 'px-5 py-2.5 text-base' };
+      return (
+        <button
+          type={type}
+          disabled={disabled}
+          onClick={onClick}
+          className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
+        >
+          {children}
+        </button>
+      );
+    }
+
+    function Input({ value, onChange, placeholder, disabled, className = '', ...rest }) {
+      return (
+        <input
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder}
+          disabled={disabled}
+          className={`w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm placeholder-slate-400
+            focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 disabled:bg-slate-100 ${className}`}
+          {...rest}
+        />
+      );
+    }
+
+    function Card({ className = '', children }) {
+      return (
+        <div className={`bg-white rounded-2xl shadow-sm border border-slate-200 ${className}`}>
+          {children}
+        </div>
+      );
+    }
+
+    function Spinner() {
+      return (
+        <div className="flex justify-center py-10" role="status" aria-label="로딩 중">
+          <div className="w-6 h-6 border-2 border-indigo-300 border-t-indigo-600 rounded-full animate-spin"></div>
+        </div>
+      );
+    }
+
+    // ========================================
+    // 📄 Page Components
+    // ========================================
+    function TodoItem({ todo, onToggle, onDelete }) {
+      return (
+        <li className="flex items-center gap-3 px-4 py-3 group">
+          <input
+            type="checkbox"
+            checked={todo.done}
+            onChange={() => onToggle(todo)}
+            aria-label={`${todo.text} 완료 여부`}
+            className="w-5 h-5 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 shrink-0 cursor-pointer"
+          />
+          <span
+            className={`flex-1 text-sm break-words ${todo.done ? 'line-through text-slate-400' : 'text-slate-700'}`}
+          >
+            {todo.text}
+          </span>
+          <button
+            onClick={() => onDelete(todo)}
+            aria-label="삭제"
+            className="opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity text-slate-400 hover:text-red-500 shrink-0"
+          >
+            ✕
+          </button>
+        </li>
+      );
+    }
+
+    function TodoApp() {
+      const [todos, setTodos] = useState([]);
+      const [text, setText] = useState('');
+      const [loading, setLoading] = useState(true);
+      const [submitting, setSubmitting] = useState(false);
+      const [error, setError] = useState(null);
+
+      const fetchTodos = useCallback(async () => {
+        try {
+          setError(null);
+          const data = await apiRequest('/todos');
+          setTodos(data);
+        } catch (err) {
+          setError(err.message);
+        } finally {
+          setLoading(false);
+        }
+      }, []);
+
+      useEffect(() => {
+        fetchTodos();
+      }, [fetchTodos]);
+
+      const handleAdd = async (e) => {
+        e.preventDefault();
+        const trimmed = text.trim();
+        if (!trimmed || submitting) return;
+        setSubmitting(true);
+        setError(null);
+        try {
+          const created = await apiRequest('/todos', {
+            method: 'POST',
+            body: JSON.stringify({ text: trimmed }),
+          });
+          setTodos((prev) => [...prev, created]);
+          setText('');
+        } catch (err) {
+          setError(err.message);
+        } finally {
+          setSubmitting(false);
+        }
+      };
+
+      const handleToggle = async (todo) => {
+        const prevTodos = todos;
+        setTodos((prev) => prev.map((t) => (t.id === todo.id ? { ...t, done: !t.done } : t)));
+        try {
+          await apiRequest(`/todos/${todo.id}`, {
+            method: 'PATCH',
+            body: JSON.stringify({ done: !todo.done }),
+          });
+        } catch (err) {
+          setTodos(prevTodos);
+          setError(err.message);
+        }
+      };
+
+      const handleDelete = async (todo) => {
+        const prevTodos = todos;
+        setTodos((prev) => prev.filter((t) => t.id !== todo.id));
+        try {
+          await apiRequest(`/todos/${todo.id}`, { method: 'DELETE' });
+        } catch (err) {
+          setTodos(prevTodos);
+          setError(err.message);
+        }
+      };
+
+      const remaining = todos.filter((t) => !t.done).length;
+
+      return (
+        <div className="max-w-md mx-auto px-4 py-10 sm:py-16">
+          <h1 className="text-2xl font-bold text-slate-800 mb-1">📝 할일 목록</h1>
+          <p className="text-sm text-slate-500 mb-6">입력한 할일은 서버의 todos.txt 파일에 저장됩니다</p>
+
+          <form onSubmit={handleAdd} className="flex gap-2 mb-6">
+            <Input
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              placeholder="할일을 입력하세요"
+              disabled={submitting}
+            />
+            <Button type="submit" disabled={submitting || !text.trim()}>
+              추가
+            </Button>
+          </form>
+
+          {error && (
+            <div className="mb-4 px-4 py-2.5 rounded-lg bg-red-50 text-red-600 text-sm" role="alert">
+              {error}
+            </div>
+          )}
+
+          <Card>
+            {loading ? (
+              <Spinner />
+            ) : todos.length === 0 ? (
+              <div className="text-center py-12 text-slate-400 text-sm">아직 등록된 할일이 없어요</div>
+            ) : (
+              <ul className="divide-y divide-slate-100">
+                {todos.map((todo) => (
+                  <TodoItem key={todo.id} todo={todo} onToggle={handleToggle} onDelete={handleDelete} />
+                ))}
+              </ul>
+            )}
+          </Card>
+
+          {!loading && todos.length > 0 && (
+            <p className="mt-4 text-center text-xs text-slate-400">
+              총 {todos.length}개 · 남은 할일 {remaining}개
+            </p>
+          )}
+        </div>
+      );
+    }
+
+    // ========================================
+    // 🚀 Rendering
+    // ========================================
+    ReactDOM.createRoot(document.getElementById('root')).render(<TodoApp />);
+  </script>
+</body>
+</html>

@@ -1,0 +1,1052 @@
+- generic [ref=e1]:
+  - generic:
+    - link "상단영역 바로가기" [ref=e2] [cursor=pointer]:
+      - /url: "#topAsideButton"
+    - link "서비스 메뉴 바로가기" [ref=e4] [cursor=pointer]:
+      - /url: "#shortcutArea"
+    - link "새소식 블록 바로가기" [ref=e6] [cursor=pointer]:
+      - /url: "#newsstand"
+    - link "쇼핑 블록 바로가기" [ref=e8] [cursor=pointer]:
+      - /url: "#shopping"
+    - link "관심사 블록 바로가기" [ref=e10] [cursor=pointer]:
+      - /url: "#feed"
+    - link "MY 영역 바로가기" [ref=e12] [cursor=pointer]:
+      - /url: "#account"
+    - link "위젯 보드 바로가기" [ref=e14] [cursor=pointer]:
+      - /url: "#widgetboard"
+    - link "보기 설정 바로가기" [ref=e16] [cursor=pointer]:
+      - /url: "#viewSetting"
+  - generic [ref=e18]:
+    - complementary "웨일 브라우저 설치 안내" [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - text: 현재 PC에 최적화된 브라우저
+          - emphasis [ref=e24]: 웨일을 설치하세요
+          - link "다운로드" [ref=e25] [cursor=pointer]:
+            - /url: https://whale.naver.com/ko/?wpid=main_theme1
+        - button "배너 닫기" [ref=e27] [cursor=pointer]
+    - complementary "웨일 브라우저 설치 안내" [ref=e29]:
+      - generic [ref=e30]:
+        - img "웨일 브라우저 이미지" [ref=e32]
+        - generic [ref=e33]: 최신 브라우저 설치하기
+        - generic [ref=e34]: 네이버의 기술이 적용된 웨일 브라우저를 만나보세요
+      - link "웨일 다운로드" [ref=e36] [cursor=pointer]:
+        - /url: https://whale.naver.com/ko/?wpid=mainpopup_theme3
+      - button "배너 닫기" [ref=e37] [cursor=pointer]
+    - banner [ref=e39]:
+      - generic [ref=e40]:
+        - generic [ref=e44]:
+          - heading [level=1] [ref=e45]:
+            - link [ref=e46] [cursor=pointer]:
+              - /url: /
+              - img "NAVER" [ref=e47]
+            - link "NAVER" [ref=e48] [cursor=pointer]:
+              - /url: /
+          - search [ref=e53]:
+            - group "검색" [ref=e54]:
+              - combobox "검색어를 입력해 주세요." [active] [ref=e57]
+              - button "AI 검색" [ref=e58] [cursor=pointer]
+          - button "입력도구" [ref=e73] [cursor=pointer]
+        - link [ref=e75] [cursor=pointer]:
+          - /url: https://siape.veta.naver.com/fxclick?eu=EU10044129&calp=-&oj=ZJlEFeSBKmLf40n3ktJ9%2FI1dfRmhn6NutwOU%2FnjIfPfEBuML%2BqEJJ2x%2FhcG054wn2qsQsVX0oX13tTsvTMQ9CFmHyMhITp%2FCcfTzuXiOX1RAy5m3sClyMw&ac=9316933&src=8221095&br=4979591&evtcd=P901&x_ti=1587&tb=&oid=&sid1=&sid2=&rk=fyEYAk-ZUKbaOsNkcujTXQ&eltts=5pWC3gJL7L4UJcICqiFdvA%3D%3D&brs=Y&&a=9956D58DF8CB5C1EC11C701EC418D13E8ABB7E2A7031EBAE8CE4587BCD4DC0392873EA3D756F084679E206709D43B8CDCFF77756AD7366A505D43BEAB069A1F05F82A68293E936762F02622AD61EAB2307A2147DB674EF062A4154C3A723D3D417B19571077F01CC32A710AC8643787CCBF3983BDBEC001B7D57D5BBF1415B03DECAFD4EC4797515E79369F58D93F85D0397252BE57A733A5E0191CFAF49D9362916AFD8D5B1A751A53190169222C8768BDABA84992E772B8F826645CE660324EC76C3327591820C64199DFC6D5CAB524A3F4553BED5E336DA7E06CD345B9A3AA12D7ECD1DA65A0E4E8D7EC4890D7F398FFDCF0CCB025387D1069FED275E6921D500353D437CB9BB
+          - img "[광고]올릴수록 커지는 포인트 혜택 오늘 클립 챌린지" [ref=e76]
+        - navigation "주요 서비스" [ref=e77]:
+          - list [ref=e78]:
+            - listitem [ref=e79]:
+              - link "메일" [ref=e80] [cursor=pointer]:
+                - /url: https://mail.naver.com
+            - listitem [ref=e83]:
+              - link "카페" [ref=e84] [cursor=pointer]:
+                - /url: https://cafe.naver.com
+            - listitem [ref=e87]:
+              - link "블로그" [ref=e88] [cursor=pointer]:
+                - /url: https://blog.naver.com
+            - listitem [ref=e91]:
+              - link "쇼핑" [ref=e92] [cursor=pointer]:
+                - /url: https://shopping.naver.com/ns/home
+            - listitem [ref=e95]:
+              - link "뉴스" [ref=e96] [cursor=pointer]:
+                - /url: https://news.naver.com/
+            - listitem [ref=e99]:
+              - link "증권" [ref=e100] [cursor=pointer]:
+                - /url: https://finance.naver.com/
+            - listitem [ref=e103]:
+              - link "부동산" [ref=e104] [cursor=pointer]:
+                - /url: https://fin.land.naver.com/
+            - listitem [ref=e107]:
+              - link "지도" [ref=e108] [cursor=pointer]:
+                - /url: https://map.naver.com
+            - listitem [ref=e111]:
+              - link "웹툰" [ref=e112] [cursor=pointer]:
+                - /url: https://comic.naver.com
+            - listitem [ref=e115]:
+              - link "치지직 치지직" [ref=e116] [cursor=pointer]:
+                - /url: https://chzzk.naver.com/?tracking_code=home_recommend
+                - img "치지직" [ref=e118]
+                - generic [ref=e119]: 치지직
+            - listitem [ref=e120]:
+              - button "바로가기 펼침" [ref=e121] [cursor=pointer]
+        - button "확장 영역" [ref=e125] [cursor=pointer]
+        - link "페이 바로가기" [ref=e128] [cursor=pointer]:
+          - /url: https://pay.naver.com
+        - button "알림" [ref=e131] [cursor=pointer]
+        - link "장바구니 알림" [ref=e134] [cursor=pointer]:
+          - /url: https://shopping.naver.com/cart
+          - generic [ref=e135]: 장바구니
+          - generic [ref=e136]: 알림
+    - main [ref=e137]:
+      - generic [ref=e139]:
+        - generic [ref=e140]:
+          - region "뉴스스탠드" [ref=e143]:
+            - tablist [ref=e146]:
+              - generic [ref=e147]:
+                - tab "뉴스스탠드" [selected] [ref=e148] [cursor=pointer]
+                - tab "언론사편집" [ref=e149] [cursor=pointer]
+              - tab "엔터" [ref=e150] [cursor=pointer]
+              - tab "스포츠 LIVE" [ref=e151] [cursor=pointer]:
+                - text: 스포츠
+                - generic [ref=e152]: LIVE
+              - tab "게임" [ref=e153] [cursor=pointer]
+              - tab "경제" [ref=e154] [cursor=pointer]
+              - tab "쇼핑투데이" [ref=e155] [cursor=pointer]
+            - generic [ref=e156]:
+              - button "전체언론사" [ref=e157] [cursor=pointer]
+              - generic [ref=e159]:
+                - link "연합뉴스" [ref=e160] [cursor=pointer]:
+                  - /url: https://news.naver.com/main/list.naver?mode=LPOD&mid=sec&sid1=001&sid2=140&oid=001&isYeonhapFlash=Y
+                - link "세제개편안 29일 만에 유턴…비거주1주택 종부세 공제 12억 유지" [ref=e165] [cursor=pointer]:
+                  - /url: https://news.naver.com/main/list.naver?mode=LPOD&mid=sec&sid1=001&sid2=140&oid=001&isYeonhapFlash=Y&aid=0016283043
+              - generic [ref=e166]:
+                - link "뉴스스탠드" [ref=e167] [cursor=pointer]:
+                  - /url: https://newsstand.naver.com/
+                - link "뉴스홈" [ref=e168] [cursor=pointer]:
+                  - /url: https://news.naver.com/
+            - tabpanel [ref=e169]:
+              - generic [ref=e180]:
+                - link [ref=e182] [cursor=pointer]:
+                  - /url: "#"
+                  - img "일간스포츠" [ref=e183]
+                - link [ref=e185] [cursor=pointer]:
+                  - /url: "#"
+                  - img "전자신문" [ref=e186]
+                - link [ref=e188] [cursor=pointer]:
+                  - /url: "#"
+                  - img "조선비즈" [ref=e189]
+                - link [ref=e191] [cursor=pointer]:
+                  - /url: "#"
+                  - img "한국경제TV" [ref=e192]
+                - link [ref=e194] [cursor=pointer]:
+                  - /url: "#"
+                  - img "채널A" [ref=e195]
+                - link [ref=e197] [cursor=pointer]:
+                  - /url: "#"
+                  - img "문화일보" [ref=e198]
+                - link [ref=e200] [cursor=pointer]:
+                  - /url: "#"
+                  - img "MBN" [ref=e201]
+                - link [ref=e203] [cursor=pointer]:
+                  - /url: "#"
+                  - img "노컷뉴스" [ref=e204]
+                - link [ref=e206] [cursor=pointer]:
+                  - /url: "#"
+                  - img "매일신문" [ref=e207]
+                - link [ref=e209] [cursor=pointer]:
+                  - /url: "#"
+                  - img "중앙데일리" [ref=e210]
+                - link [ref=e212] [cursor=pointer]:
+                  - /url: "#"
+                  - img "동아일보" [ref=e213]
+                - link [ref=e215] [cursor=pointer]:
+                  - /url: "#"
+                  - img "헤럴드경제" [ref=e216]
+                - link [ref=e218] [cursor=pointer]:
+                  - /url: "#"
+                  - img "JTBC" [ref=e219]
+                - link [ref=e221] [cursor=pointer]:
+                  - /url: "#"
+                  - img "KBS" [ref=e222]
+                - link [ref=e224] [cursor=pointer]:
+                  - /url: "#"
+                  - img "코리아헤럴드" [ref=e225]
+                - link [ref=e227] [cursor=pointer]:
+                  - /url: "#"
+                  - img "더팩트" [ref=e228]
+                - link [ref=e230] [cursor=pointer]:
+                  - /url: "#"
+                  - img "베리타스알파" [ref=e231]
+                - link [ref=e233] [cursor=pointer]:
+                  - /url: "#"
+                  - img "스포츠월드" [ref=e234]
+                - link [ref=e236] [cursor=pointer]:
+                  - /url: "#"
+                  - img "서울파이낸스" [ref=e237]
+                - link [ref=e239] [cursor=pointer]:
+                  - /url: "#"
+                  - img "산업일보" [ref=e240]
+                - link [ref=e242] [cursor=pointer]:
+                  - /url: "#"
+                  - img "바이라인네트워크" [ref=e243]
+                - link [ref=e245] [cursor=pointer]:
+                  - /url: "#"
+                  - img "동아사이언스" [ref=e246]
+                - link [ref=e248] [cursor=pointer]:
+                  - /url: "#"
+                  - img "한국대학신문" [ref=e249]
+                - link [ref=e251] [cursor=pointer]:
+                  - /url: "#"
+                  - img "조이뉴스24" [ref=e252]
+            - generic [ref=e253]:
+              - radiogroup [ref=e254]:
+                - radio "리스트형" [ref=e255] [cursor=pointer]
+                - radio "썸네일형" [checked] [ref=e257] [cursor=pointer]
+              - button "이전 페이지" [ref=e259] [cursor=pointer]
+              - generic [ref=e261]:
+                - generic [ref=e262]: 언론사 더보기
+                - generic [ref=e263]:
+                  - text: "1"
+                  - generic [ref=e264]: 페이지
+                - generic [ref=e265]:
+                  - generic [ref=e266]: 전체
+                  - text: /4
+              - button "다음 페이지" [ref=e267] [cursor=pointer]
+          - region "쇼핑" [ref=e269]:
+            - iframe [ref=e270]:
+              - tablist [ref=f2e5]:
+                - tab "쇼핑" [selected] [ref=f2e6] [cursor=pointer]
+                - tab "맨즈" [ref=f2e7] [cursor=pointer]
+                - tab "브랜드샵" [ref=f2e8] [cursor=pointer]
+                - tab "지금뜨는" [ref=f2e9] [cursor=pointer]
+                - tab "N+스토어 혜택" [ref=f2e10] [cursor=pointer]:
+                  - generic [ref=f2e11]: N+스토어
+                  - text: 혜택
+                - tab "추천핫딜" [ref=f2e13] [cursor=pointer]
+                - tab "쇼핑라이브" [ref=f2e14] [cursor=pointer]
+          - region "추천 관심사" [ref=e271]:
+            - generic [ref=e273]:
+              - tablist [ref=e274]:
+                - tab "추천" [ref=e276] [cursor=pointer]
+                - tab "카테크" [ref=e277] [cursor=pointer]
+                - tab "웹툰" [selected] [ref=e278] [cursor=pointer]
+                - tab "패션뷰티" [ref=e279] [cursor=pointer]
+                - tab "리빙푸드" [ref=e280] [cursor=pointer]
+                - tab "책방" [ref=e281] [cursor=pointer]
+                - tab "지식" [ref=e282] [cursor=pointer]
+                - tab "건강" [ref=e283] [cursor=pointer]
+              - link "구독홈" [ref=e284] [cursor=pointer]:
+                - /url: https://m.naver.com/mysubs?mode=pc
+            - generic [ref=e285]:
+              - list [ref=e286]:
+                - listitem [ref=e287]:
+                  - link "웹툰홈" [ref=e288] [cursor=pointer]:
+                    - /url: https://comic.naver.com/index
+                - listitem [ref=e289]:
+                  - link "요일별웹툰" [ref=e290] [cursor=pointer]:
+                    - /url: https://comic.naver.com/webtoon/weekday
+                - listitem [ref=e291]:
+                  - link "베스트도전" [ref=e292] [cursor=pointer]:
+                    - /url: https://comic.naver.com/genre/bestChallenge
+              - list [ref=e293]:
+                - listitem [ref=e294]:
+                  - link "웹소설홈" [ref=e295] [cursor=pointer]:
+                    - /url: https://novel.naver.com/webnovel/weekday
+                - listitem [ref=e296]:
+                  - link "시리즈에디션" [ref=e297] [cursor=pointer]:
+                    - /url: https://novel.naver.com/webnovel/weekdayList
+                - listitem [ref=e298]:
+                  - link "베스트리그" [ref=e299] [cursor=pointer]:
+                    - /url: https://novel.naver.com/best/popular
+              - list [ref=e300]:
+                - listitem [ref=e301]:
+                  - link "시리즈홈" [ref=e302] [cursor=pointer]:
+                    - /url: https://series.naver.com/
+                - listitem [ref=e303]:
+                  - link "웹소설" [ref=e304] [cursor=pointer]:
+                    - /url: https://series.naver.com/novel/home.series
+                - listitem [ref=e305]:
+                  - link "만화" [ref=e306] [cursor=pointer]:
+                    - /url: https://series.naver.com/comic/home.series
+            - tabpanel [ref=e307]:
+              - generic [ref=e308]:
+                - generic [ref=e309]:
+                  - strong [ref=e310]: 화요웹툰
+                  - link "화요웹툰 전체보기" [ref=e311] [cursor=pointer]:
+                    - /url: https://comic.naver.com/webtoon/weekdayList?week=tue
+                - list [ref=e313]:
+                  - listitem [ref=e314]:
+                    - link "UP 절대회귀 JP / 박진환 / 장영훈" [ref=e315] [cursor=pointer]:
+                      - /url: https://comic.naver.com/webtoon/list?titleId=828715
+                      - strong [ref=e318]:
+                        - generic: UP
+                        - text: 절대회귀
+                      - generic [ref=e320]: JP / 박진환 / 장영훈
+                  - listitem [ref=e322]:
+                    - link "UP 김부장 박만사, 남자의 이야기 / 정종택" [ref=e323] [cursor=pointer]:
+                      - /url: https://comic.naver.com/webtoon/list?titleId=783053
+                      - strong [ref=e326]:
+                        - generic: UP
+                        - text: 김부장
+                      - generic [ref=e328]: 박만사, 남자의 이야기 / 정종택
+                  - listitem [ref=e330]:
+                    - link "UP 44교시 생존수업 상C" [ref=e331] [cursor=pointer]:
+                      - /url: https://comic.naver.com/webtoon/list?titleId=836848
+                      - strong [ref=e334]:
+                        - generic: UP
+                        - text: 44교시 생존수업
+                      - generic [ref=e336]: 상C
+                  - listitem [ref=e338]:
+                    - link "청소년 관람불가 UP 오! 나의 교주님 김꿀빨, 김완두" [ref=e339] [cursor=pointer]:
+                      - /url: https://comic.naver.com/webtoon/list?titleId=841624
+                      - generic [ref=e340]: 청소년 관람불가
+                      - strong [ref=e344]:
+                        - generic: UP
+                        - text: 오! 나의 교주님
+                      - generic [ref=e346]: 김꿀빨, 김완두
+                  - listitem [ref=e348]:
+                    - link "UP 회귀한 용병은 다 계획이 있다 골드행 / 박진석" [ref=e349] [cursor=pointer]:
+                      - /url: https://comic.naver.com/webtoon/list?titleId=832557
+                      - strong [ref=e352]:
+                        - generic: UP
+                        - text: 회귀한 용병은 다 계획이 있다
+                      - generic [ref=e354]: 골드행 / 박진석
+                  - listitem [ref=e356]:
+                    - link "청소년 관람불가 UP 예쁨 컬렉션 김이연" [ref=e357] [cursor=pointer]:
+                      - /url: https://comic.naver.com/webtoon/list?titleId=844519
+                      - generic [ref=e358]: 청소년 관람불가
+                      - strong [ref=e362]:
+                        - generic: UP
+                        - text: 예쁨 컬렉션
+                      - generic [ref=e364]: 김이연
+                  - listitem [ref=e366]:
+                    - link "UP 내가 키운 S급들 seri / 비완 / 근서" [ref=e367] [cursor=pointer]:
+                      - /url: https://comic.naver.com/webtoon/list?titleId=784248
+                      - strong [ref=e370]:
+                        - generic: UP
+                        - text: 내가 키운 S급들
+                      - generic [ref=e372]: seri / 비완 / 근서
+                  - listitem [ref=e374]:
+                    - link "청소년 관람불가 UP 포그랜드 POGO" [ref=e375] [cursor=pointer]:
+                      - /url: https://comic.naver.com/webtoon/list?titleId=843116
+                      - generic [ref=e376]: 청소년 관람불가
+                      - strong [ref=e380]:
+                        - generic: UP
+                        - text: 포그랜드
+                      - generic [ref=e382]: POGO
+                  - listitem [ref=e384]:
+                    - link "UP 멸망 이후의 세계 언데드딸기 / 언데드감자 / 싱숑" [ref=e385] [cursor=pointer]:
+                      - /url: https://comic.naver.com/webtoon/list?titleId=789979
+                      - strong [ref=e388]:
+                        - generic: UP
+                        - text: 멸망 이후의 세계
+                      - generic [ref=e390]: 언데드딸기 / 언데드감자 / 싱숑
+                  - listitem [ref=e392]:
+                    - link "UP 염라강림 바른꽃" [ref=e393] [cursor=pointer]:
+                      - /url: https://comic.naver.com/webtoon/list?titleId=818192
+                      - strong [ref=e396]:
+                        - generic: UP
+                        - text: 염라강림
+                      - generic [ref=e398]: 바른꽃
+                  - listitem [ref=e400]:
+                    - 'link "UP 중증외상센터 : 외과의사 백강혁 홍비치라 / 한산이가" [ref=e401] [cursor=pointer]':
+                      - /url: https://comic.naver.com/webtoon/list?titleId=835736
+                      - strong [ref=e404]:
+                        - generic: UP
+                        - text: "중증외상센터 : 외과의사 백강혁"
+                      - generic [ref=e406]: 홍비치라 / 한산이가
+                  - listitem [ref=e408]:
+                    - link "UP 양치기 마법사 박만사, 김꿀빨 / YU / 수박복숭아" [ref=e409] [cursor=pointer]:
+                      - /url: https://comic.naver.com/webtoon/list?titleId=848349
+                      - strong [ref=e412]:
+                        - generic: UP
+                        - text: 양치기 마법사
+                      - generic [ref=e414]: 박만사, 김꿀빨 / YU / 수박복숭아
+              - generic [ref=e416]:
+                - generic [ref=e417]:
+                  - strong [ref=e418]: 이번주 가장 많이 본 웹툰
+                  - tablist [ref=e419]:
+                    - tab "신작" [selected] [ref=e420] [cursor=pointer]
+                    - tab "완결" [ref=e421] [cursor=pointer]
+                - tabpanel [ref=e423]:
+                  - listitem [ref=e424]:
+                    - link "1 위 전직지존 KHJ / 손민 / 장영훈 절대회귀 작가 작품" [ref=e425] [cursor=pointer]:
+                      - /url: https://comic.naver.com/webtoon/list?titleId=852845
+                      - generic [ref=e428]:
+                        - generic [ref=e429]:
+                          - generic [ref=e430]:
+                            - text: "1"
+                            - generic [ref=e431]: 위
+                          - text: 전직지존
+                        - generic [ref=e432]: KHJ / 손민 / 장영훈
+                        - generic [ref=e433]: 절대회귀 작가 작품
+                  - listitem [ref=e434]:
+                    - link "2 위 생존지상주의 토이 / 싱싱 냉동무사 작가 작품" [ref=e435] [cursor=pointer]:
+                      - /url: https://comic.naver.com/webtoon/list?titleId=853709
+                      - generic [ref=e438]:
+                        - generic [ref=e439]:
+                          - generic [ref=e440]:
+                            - text: "2"
+                            - generic [ref=e441]: 위
+                          - text: 생존지상주의
+                        - generic [ref=e442]: 토이 / 싱싱
+                        - generic [ref=e443]: 냉동무사 작가 작품
+                  - listitem [ref=e444]:
+                    - link "3 위 해일주의보 맛곰 / 그일도 탑아이돌의 막내 멤버가 되었다 작가 작품" [ref=e445] [cursor=pointer]:
+                      - /url: https://comic.naver.com/webtoon/list?titleId=853833
+                      - generic [ref=e448]:
+                        - generic [ref=e449]:
+                          - generic [ref=e450]:
+                            - text: "3"
+                            - generic [ref=e451]: 위
+                          - text: 해일주의보
+                        - generic [ref=e452]: 맛곰 / 그일도
+                        - generic [ref=e453]: 탑아이돌의 막내 멤버가 되었다 작가 작품
+                  - listitem [ref=e454]:
+                    - link "청소년 관람불가 4 위 나의 경험 윤박" [ref=e455] [cursor=pointer]:
+                      - /url: https://comic.naver.com/webtoon/list?titleId=853278
+                      - generic [ref=e456]: 청소년 관람불가
+                      - generic [ref=e460]:
+                        - generic [ref=e461]:
+                          - generic [ref=e462]:
+                            - text: "4"
+                            - generic [ref=e463]: 위
+                          - text: 나의 경험
+                        - generic [ref=e464]: 윤박
+                  - listitem [ref=e465]:
+                    - link "5 위 까맣지만 새하얀 최준영 / 망품 두근두근 대작전 작가 작품" [ref=e466] [cursor=pointer]:
+                      - /url: https://comic.naver.com/webtoon/list?titleId=854126
+                      - generic [ref=e469]:
+                        - generic [ref=e470]:
+                          - generic [ref=e471]:
+                            - text: "5"
+                            - generic [ref=e472]: 위
+                          - text: 까맣지만 새하얀
+                        - generic [ref=e473]: 최준영 / 망품
+                        - generic [ref=e474]: 두근두근 대작전 작가 작품
+                  - listitem [ref=e475]:
+                    - link "6 위 원더랜드 까말솔 / 경한" [ref=e476] [cursor=pointer]:
+                      - /url: https://comic.naver.com/webtoon/list?titleId=852503
+                      - generic [ref=e479]:
+                        - generic [ref=e480]:
+                          - generic [ref=e481]:
+                            - text: "6"
+                            - generic [ref=e482]: 위
+                          - text: 원더랜드
+                        - generic [ref=e483]: 까말솔 / 경한
+              - generic [ref=e484]:
+                - strong [ref=e486]: 시리즈에디션
+                - list [ref=e488]:
+                  - listitem [ref=e489]:
+                    - link "시리즈에디션 가난한 영지의 주인이 되어 버렸다 [독점] 바가지" [ref=e490] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=492222
+                      - generic [ref=e491]: 시리즈에디션
+                      - generic [ref=e495]:
+                        - generic [ref=e496]: 가난한 영지의 주인이 되어 버렸다 [독점]
+                        - generic [ref=e497]: 바가지
+                  - listitem [ref=e498]:
+                    - link "시리즈에디션 UP 백부로소이다 [독점] 최이윤" [ref=e499] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=709738
+                      - generic [ref=e500]: 시리즈에디션
+                      - generic [ref=e504]:
+                        - generic [ref=e505]:
+                          - generic [ref=e506]: UP
+                          - text: 백부로소이다 [독점]
+                        - generic [ref=e508]: 최이윤
+                  - listitem [ref=e509]:
+                    - link "시리즈에디션 UP 괴담 전문 청소부가 되었다 [독점] 녹조" [ref=e510] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=709537
+                      - generic [ref=e511]: 시리즈에디션
+                      - generic [ref=e515]:
+                        - generic [ref=e516]:
+                          - generic [ref=e517]: UP
+                          - text: 괴담 전문 청소부가 되었다 [독점]
+                        - generic [ref=e519]: 녹조
+                  - listitem [ref=e520]:
+                    - link "시리즈에디션 UP 야생에서 갤러리를 얻었다 [독점] 두부두부" [ref=e521] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=576449
+                      - generic [ref=e522]: 시리즈에디션
+                      - generic [ref=e526]:
+                        - generic [ref=e527]:
+                          - generic [ref=e528]: UP
+                          - text: 야생에서 갤러리를 얻었다 [독점]
+                        - generic [ref=e530]: 두부두부
+                  - listitem [ref=e531]:
+                    - link "시리즈에디션 절대회귀 [독점] 장영훈" [ref=e532] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=485619
+                      - generic [ref=e533]: 시리즈에디션
+                      - generic [ref=e537]:
+                        - generic [ref=e538]: 절대회귀 [독점]
+                        - generic [ref=e539]: 장영훈
+                  - listitem [ref=e540]:
+                    - link "신작 시리즈에디션 양아치라 그래 [독점] 강춘" [ref=e541] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=712459
+                      - generic [ref=e542]:
+                        - generic [ref=e544]: 신작
+                        - generic [ref=e546]: 시리즈에디션
+                      - generic [ref=e548]:
+                        - generic [ref=e549]: 양아치라 그래 [독점]
+                        - generic [ref=e550]: 강춘
+                  - listitem [ref=e551]:
+                    - link "시리즈에디션 로제타 [독점] 이현성" [ref=e552] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=702223
+                      - generic [ref=e553]: 시리즈에디션
+                      - generic [ref=e557]:
+                        - generic [ref=e558]: 로제타 [독점]
+                        - generic [ref=e559]: 이현성
+                  - listitem [ref=e560]:
+                    - link "시리즈에디션 계속 써도 돈이 쌓임 운좋은놈" [ref=e561] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=629067
+                      - generic [ref=e562]: 시리즈에디션
+                      - generic [ref=e566]:
+                        - generic [ref=e567]: 계속 써도 돈이 쌓임
+                        - generic [ref=e568]: 운좋은놈
+                  - listitem [ref=e569]:
+                    - link "시리즈에디션 UP 오늘만 사는 기사 [독점] 소울풍" [ref=e570] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=497029
+                      - generic [ref=e571]: 시리즈에디션
+                      - generic [ref=e575]:
+                        - generic [ref=e576]:
+                          - generic [ref=e577]: UP
+                          - text: 오늘만 사는 기사 [독점]
+                        - generic [ref=e579]: 소울풍
+                  - listitem [ref=e580]:
+                    - link "시리즈에디션 UP 와인의 신 최풍뎅" [ref=e581] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=671850
+                      - generic [ref=e582]: 시리즈에디션
+                      - generic [ref=e586]:
+                        - generic [ref=e587]:
+                          - generic [ref=e588]: UP
+                          - text: 와인의 신
+                        - generic [ref=e590]: 최풍뎅
+                  - listitem [ref=e591]:
+                    - link "시리즈에디션 해일주의보 [독점] 그일도" [ref=e592] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=652731
+                      - generic [ref=e593]: 시리즈에디션
+                      - generic [ref=e597]:
+                        - generic [ref=e598]: 해일주의보 [독점]
+                        - generic [ref=e599]: 그일도
+                  - listitem [ref=e600]:
+                    - link "시리즈에디션 괴력 난신(怪力 亂神) 한중월야" [ref=e601] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=452271
+                      - generic [ref=e602]: 시리즈에디션
+                      - generic [ref=e606]:
+                        - generic [ref=e607]: 괴력 난신(怪力 亂神)
+                        - generic [ref=e608]: 한중월야
+                  - listitem [ref=e609]:
+                    - link "시리즈에디션 회귀 닥터는 조용히 살고 싶었다 [독점] 타우란" [ref=e610] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=502870
+                      - generic [ref=e611]: 시리즈에디션
+                      - generic [ref=e615]:
+                        - generic [ref=e616]: 회귀 닥터는 조용히 살고 싶었다 [독점]
+                        - generic [ref=e617]: 타우란
+                  - listitem [ref=e618]:
+                    - link "시리즈에디션 UP 화산귀환 [독점] 비가" [ref=e619] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=360163
+                      - generic [ref=e620]: 시리즈에디션
+                      - generic [ref=e624]:
+                        - generic [ref=e625]:
+                          - generic [ref=e626]: UP
+                          - text: 화산귀환 [독점]
+                        - generic [ref=e628]: 비가
+                  - listitem [ref=e629]:
+                    - link "시리즈에디션 모든걸 기억하는 천재무사 [독점] 적설목" [ref=e630] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=469833
+                      - generic [ref=e631]: 시리즈에디션
+                      - generic [ref=e635]:
+                        - generic [ref=e636]: 모든걸 기억하는 천재무사 [독점]
+                        - generic [ref=e637]: 적설목
+                  - listitem [ref=e638]:
+                    - link "시리즈에디션 시한부 천재가 살아남는 법 청시소" [ref=e639] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=424012
+                      - generic [ref=e640]: 시리즈에디션
+                      - generic [ref=e644]:
+                        - generic [ref=e645]: 시한부 천재가 살아남는 법
+                        - generic [ref=e646]: 청시소
+                  - listitem [ref=e647]:
+                    - link "시리즈에디션 UP 천마신교 마공자 [독점] 김현영" [ref=e648] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=694289
+                      - generic [ref=e649]: 시리즈에디션
+                      - generic [ref=e653]:
+                        - generic [ref=e654]:
+                          - generic [ref=e655]: UP
+                          - text: 천마신교 마공자 [독점]
+                        - generic [ref=e657]: 김현영
+                  - listitem [ref=e658]:
+                    - link "시리즈에디션 천마 아포칼립스 [독점] 짤짤이" [ref=e659] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=582173
+                      - generic [ref=e660]: 시리즈에디션
+                      - generic [ref=e664]:
+                        - generic [ref=e665]: 천마 아포칼립스 [독점]
+                        - generic [ref=e666]: 짤짤이
+                  - listitem [ref=e667]:
+                    - link "시리즈에디션 UP 전지적 독자 시점 싱숑" [ref=e668] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=314752
+                      - generic [ref=e669]: 시리즈에디션
+                      - generic [ref=e673]:
+                        - generic [ref=e674]:
+                          - generic [ref=e675]: UP
+                          - text: 전지적 독자 시점
+                        - generic [ref=e677]: 싱숑
+                  - listitem [ref=e678]:
+                    - link "시리즈에디션 전직지존 장영훈" [ref=e679] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=386538
+                      - generic [ref=e680]: 시리즈에디션
+                      - generic [ref=e684]:
+                        - generic [ref=e685]: 전직지존
+                        - generic [ref=e686]: 장영훈
+                  - listitem [ref=e687]:
+                    - link "시리즈에디션 UP 사라진 천재 투수가 돌아왔다 [독점] 강유성" [ref=e688] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=682743
+                      - generic [ref=e689]: 시리즈에디션
+                      - generic [ref=e693]:
+                        - generic [ref=e694]:
+                          - generic [ref=e695]: UP
+                          - text: 사라진 천재 투수가 돌아왔다 [독점]
+                        - generic [ref=e697]: 강유성
+                  - listitem [ref=e698]:
+                    - link "시리즈에디션 UP 무신급 점소이가 되었다 [독점] 소판양" [ref=e699] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=623022
+                      - generic [ref=e700]: 시리즈에디션
+                      - generic [ref=e704]:
+                        - generic [ref=e705]:
+                          - generic [ref=e706]: UP
+                          - text: 무신급 점소이가 되었다 [독점]
+                        - generic [ref=e708]: 소판양
+                  - listitem [ref=e709]:
+                    - link "시리즈에디션 귀농했더니 국가급 거물 후배들이 몰려든다 아길론" [ref=e710] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=559145
+                      - generic [ref=e711]: 시리즈에디션
+                      - generic [ref=e715]:
+                        - generic [ref=e716]: 귀농했더니 국가급 거물 후배들이 몰려든다
+                        - generic [ref=e717]: 아길론
+                  - listitem [ref=e718]:
+                    - link "시리즈에디션 하남자의 탑 공략법 꾸찌꾸찌" [ref=e719] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=569813
+                      - generic [ref=e720]: 시리즈에디션
+                      - generic [ref=e724]:
+                        - generic [ref=e725]: 하남자의 탑 공략법
+                        - generic [ref=e726]: 꾸찌꾸찌
+                - button "다음 페이지" [ref=e727] [cursor=pointer]
+              - generic [ref=e729]:
+                - generic [ref=e730]:
+                  - strong [ref=e731]: 이번주 가장 많이 본 웹소설
+                  - tablist [ref=e732]:
+                    - tab "신작" [selected] [ref=e733] [cursor=pointer]
+                    - tab "완결" [ref=e734] [cursor=pointer]
+                - tabpanel [ref=e736]:
+                  - listitem [ref=e737]:
+                    - link "1 위 전능의 신을 얻었다 현판 406 50화 무료" [ref=e738] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=713412
+                      - generic [ref=e741]:
+                        - generic [ref=e742]:
+                          - generic [ref=e743]:
+                            - text: "1"
+                            - generic [ref=e744]: 위
+                          - text: 전능의 신을 얻었다
+                        - generic [ref=e745]: 현판 406
+                        - generic [ref=e746]: 50화 무료
+                  - listitem [ref=e747]:
+                    - link "2 위 병원장 막내딸과 하룻밤을 보냈다 현판 되새김질 50화 무료" [ref=e748] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=712494
+                      - generic [ref=e751]:
+                        - generic [ref=e752]:
+                          - generic [ref=e753]:
+                            - text: "2"
+                            - generic [ref=e754]: 위
+                          - text: 병원장 막내딸과 하룻밤을 보냈다
+                        - generic [ref=e755]: 현판 되새김질
+                        - generic [ref=e756]: 50화 무료
+                  - listitem [ref=e757]:
+                    - link "시리즈에디션 3 위 프롤로그에서 30년이 흘렀다 [독점] 판타지 맠엘라하 50화 무료" [ref=e758] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=705745
+                      - generic [ref=e759]: 시리즈에디션
+                      - generic [ref=e763]:
+                        - generic [ref=e764]:
+                          - generic [ref=e765]:
+                            - text: "3"
+                            - generic [ref=e766]: 위
+                          - text: 프롤로그에서 30년이 흘렀다 [독점]
+                        - generic [ref=e767]: 판타지 맠엘라하
+                        - generic [ref=e768]: 50화 무료
+                  - listitem [ref=e769]:
+                    - link "시리즈에디션 4 위 양아치라 그래 [독점] 로맨스 강춘 4화 무료" [ref=e770] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=712459
+                      - generic [ref=e771]: 시리즈에디션
+                      - generic [ref=e775]:
+                        - generic [ref=e776]:
+                          - generic [ref=e777]:
+                            - text: "4"
+                            - generic [ref=e778]: 위
+                          - text: 양아치라 그래 [독점]
+                        - generic [ref=e779]: 로맨스 강춘
+                        - generic [ref=e780]: 4화 무료
+                  - listitem [ref=e781]:
+                    - link "시리즈에디션 5 위 UP 괴담 전문 청소부가 되었다 [독점] 현판 녹조 25화 무료" [ref=e782] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=709537
+                      - generic [ref=e783]: 시리즈에디션
+                      - generic [ref=e787]:
+                        - generic [ref=e788]:
+                          - generic [ref=e789]:
+                            - text: "5"
+                            - generic [ref=e790]: 위
+                          - generic [ref=e791]: UP
+                          - text: 괴담 전문 청소부가 되었다 [독점]
+                        - generic [ref=e793]: 현판 녹조
+                        - generic [ref=e794]: 25화 무료
+                  - listitem [ref=e795]:
+                    - link "6 위 UP 천재배우가 세계최강 싸움실력을 숨김 현판 던송 50화 무료" [ref=e796] [cursor=pointer]:
+                      - /url: http://series.naver.com/novel/detail.nhn?originalProductId=709544
+                      - generic [ref=e799]:
+                        - generic [ref=e800]:
+                          - generic [ref=e801]:
+                            - text: "6"
+                            - generic [ref=e802]: 위
+                          - generic [ref=e803]: UP
+                          - text: 천재배우가 세계최강 싸움실력을 숨김
+                        - generic [ref=e805]: 현판 던송
+                        - generic [ref=e806]: 50화 무료
+            - button "펼쳐보기" [ref=e808] [cursor=pointer]
+        - generic [ref=e814]:
+          - region "로그인 정보" [ref=e815]:
+            - generic [ref=e816]:
+              - paragraph [ref=e817]: 네이버를 더 안전하고 편리하게 이용하세요
+              - link "NAVER 로그인" [ref=e818] [cursor=pointer]:
+                - /url: https://nid.naver.com/nidlogin.login?mode=form&url=https://www.naver.com/
+                - generic [ref=e819]: NAVER
+                - text: 로그인
+              - generic [ref=e821]:
+                - link "아이디 찾기" [ref=e822] [cursor=pointer]:
+                  - /url: https://nid.naver.com/user2/api/route?m=routeIdInquiry
+                - link "비밀번호 찾기" [ref=e823] [cursor=pointer]:
+                  - /url: https://nid.naver.com/user2/api/route?m=routePwInquiry
+                - link "회원가입" [ref=e824] [cursor=pointer]:
+                  - /url: https://nid.naver.com/nidregister.form?url=https%3A%2F%2Fwww.naver.com
+          - iframe [ref=e830]:
+            - generic:
+              - main
+              - alert [ref=f3e1]
+          - region "날씨" [ref=e831]:
+            - generic [ref=e832]:
+              - generic [ref=e833]:
+                - link "날씨" [ref=e834] [cursor=pointer]:
+                  - /url: https://weather.naver.com/
+                - link "예보 비교" [ref=e835] [cursor=pointer]:
+                  - /url: https://weather.naver.com/compare/09650106
+                - generic [ref=e836]: 서울시 잠원동
+              - generic [ref=e837]:
+                - generic [ref=e838]:
+                  - link "21.8° 흐림 최저기온 23° 최고기온 26°" [ref=e839] [cursor=pointer]:
+                    - /url: https://weather.naver.com/today/09650106?cpName=KMA
+                    - generic [ref=e842]:
+                      - text: 21.8°
+                      - generic [ref=e843]: 흐림
+                    - generic [ref=e844]:
+                      - generic [ref=e845]:
+                        - generic [ref=e846]: 최저기온
+                        - text: 23°
+                      - generic [ref=e847]:
+                        - generic [ref=e848]: 최고기온
+                        - text: 26°
+                  - link "미세좋음 초미세좋음" [ref=e849] [cursor=pointer]:
+                    - /url: https://weather.naver.com/air/09650106?cpName=KMA
+                    - generic [ref=e850]: 미세좋음
+                    - generic [ref=e851]: 초미세좋음
+                - link "21시 비 21° 23 흐림 23° 1 흐림 24° 3 흐림 24° 5 흐림 23°" [ref=e853] [cursor=pointer]:
+                  - /url: https://weather.naver.com/today/09650106?cpName=KMA
+                  - list [ref=e856]:
+                    - listitem [ref=e857]:
+                      - generic [ref=e858]: 21시
+                      - generic [ref=e859]: 비
+                      - generic [ref=e861]: 21°
+                    - listitem [ref=e862]:
+                      - generic [ref=e863]: "23"
+                      - generic [ref=e864]: 흐림
+                      - generic [ref=e866]: 23°
+                    - listitem [ref=e867]:
+                      - generic [ref=e868]: "1"
+                      - generic [ref=e869]: 흐림
+                      - generic [ref=e871]: 24°
+                    - listitem [ref=e872]:
+                      - generic [ref=e873]: "3"
+                      - generic [ref=e874]: 흐림
+                      - generic [ref=e876]: 24°
+                    - listitem [ref=e877]:
+                      - generic [ref=e878]: "5"
+                      - generic [ref=e879]: 흐림
+                      - generic [ref=e881]: 23°
+          - region "증시" [ref=e882]:
+            - generic [ref=e883]:
+              - generic [ref=e884]:
+                - link "증시" [ref=e885] [cursor=pointer]:
+                  - /url: https://finance.naver.com/
+                - button "정보 더보기" [ref=e886] [cursor=pointer]
+                - generic [ref=e888]:
+                  - text: 09.01. 20:28
+                  - button "새로고침" [ref=e889] [cursor=pointer]
+              - generic [ref=e891]:
+                - link "유로스톡스50 6,371.48 하락 48.68-0.76%" [ref=e895] [cursor=pointer]:
+                  - /url: https://finance.naver.com/world/sise.nhn?symbol=STX@SX5E
+                  - generic [ref=e896]:
+                    - generic [ref=e897]: 유로스톡스50
+                    - generic [ref=e898]: 6,371.48
+                    - generic [ref=e899]:
+                      - generic [ref=e900]: 하락
+                      - text: "48.68"
+                      - generic [ref=e902]: "-0.76%"
+                - list [ref=e905]:
+                  - listitem [ref=e906]:
+                    - link "삼성전자 상승 0.38% 261,000" [ref=e907] [cursor=pointer]:
+                      - /url: https://finance.naver.com/item/main.naver?code=005930
+                      - generic [ref=e908]: 삼성전자
+                      - generic [ref=e909]:
+                        - generic [ref=e910]: 상승
+                        - generic [ref=e912]: 0.38%
+                        - text: 261,000
+                  - listitem [ref=e913]:
+                    - link "SK하이닉스 상승 1.14% 1,693,000" [ref=e914] [cursor=pointer]:
+                      - /url: https://finance.naver.com/item/main.naver?code=000660
+                      - generic [ref=e915]: SK하이닉스
+                      - generic [ref=e916]:
+                        - generic [ref=e917]: 상승
+                        - generic [ref=e919]: 1.14%
+                        - text: 1,693,000
+                  - listitem [ref=e920]:
+                    - link "삼성전기 하락 1.92% 1,430,000" [ref=e921] [cursor=pointer]:
+                      - /url: https://finance.naver.com/item/main.naver?code=009150
+                      - generic [ref=e922]: 삼성전기
+                      - generic [ref=e923]:
+                        - generic [ref=e924]: 하락
+                        - generic [ref=e926]: 1.92%
+                        - text: 1,430,000
+                  - listitem [ref=e927]:
+                    - link "인기종목 더보기" [ref=e928] [cursor=pointer]:
+                      - /url: https://finance.naver.com/sise/lastsearch2.naver
+          - region "위젯" [ref=e929]:
+            - generic [ref=e930]: 위젯 보드
+            - generic [ref=e931]:
+              - generic [ref=e932]:
+                - generic [ref=e933]:
+                  - generic [ref=e934]:
+                    - generic [ref=e935]: 캘린더
+                    - generic [ref=e938]:
+                      - text: "9.1"
+                      - generic [ref=e939]: 화
+                    - link "로그인하기":
+                      - /url: https://nid.naver.com/nidlogin.login?mode=form&url=https://www.naver.com/?to=widget
+                    - link [ref=e941] [cursor=pointer]:
+                      - /url: https://nid.naver.com/nidlogin.login?mode=form&url=https://www.naver.com/?to=widget
+                      - table [ref=e942]:
+                        - caption [ref=e943]: 2026년 9월 캘린더 - 이번 달의 일정을 날짜별로 확인할 수 있는 표입니다. 각 셀에는 날짜와 해당 일정이 포함됩니다.
+                        - rowgroup [ref=e944]:
+                          - row [ref=e945]:
+                            - columnheader "일" [ref=e946]
+                            - columnheader "월" [ref=e947]
+                            - columnheader "화" [ref=e948]
+                            - columnheader "수" [ref=e949]
+                            - columnheader "목" [ref=e950]
+                            - columnheader "금" [ref=e951]
+                            - columnheader "토" [ref=e952]
+                        - rowgroup [ref=e953]:
+                          - row [ref=e954]:
+                            - cell "30" [ref=e955]
+                            - cell "31" [ref=e956]
+                            - cell "1" [ref=e957]
+                            - cell "2" [ref=e958]
+                            - cell "3" [ref=e959]
+                            - cell "4" [ref=e960]
+                            - cell "5" [ref=e961]
+                          - row [ref=e962]:
+                            - cell "6" [ref=e963]
+                            - cell "7" [ref=e964]
+                            - cell "8" [ref=e965]
+                            - cell "9" [ref=e966]
+                            - cell "10" [ref=e967]
+                            - cell "11" [ref=e968]
+                            - cell "12" [ref=e969]
+                          - row [ref=e970]:
+                            - cell "13" [ref=e971]
+                            - cell "14" [ref=e972]
+                            - cell "15" [ref=e973]
+                            - cell "16" [ref=e974]
+                            - cell "17" [ref=e975]
+                            - cell "18" [ref=e976]
+                            - cell "19" [ref=e977]
+                          - row [ref=e978]:
+                            - cell "20" [ref=e979]
+                            - cell "21" [ref=e980]
+                            - cell "22" [ref=e981]
+                            - cell "23" [ref=e982]
+                            - cell "24" [ref=e983]
+                            - cell "25" [ref=e984]
+                            - cell "26" [ref=e985]
+                          - row [ref=e986]:
+                            - cell "27" [ref=e987]
+                            - cell "28" [ref=e988]
+                            - cell "29" [ref=e989]
+                            - cell "30" [ref=e990]
+                            - cell "1" [ref=e991]
+                            - cell "2" [ref=e992]
+                            - cell "3" [ref=e993]
+                  - generic [ref=e994]:
+                    - generic [ref=e995]:
+                      - generic [ref=e996]: VIBE
+                      - generic [ref=e998]: 예술가의 이야기
+                      - button "다른 추천 보기" [ref=e999] [cursor=pointer]
+                    - list [ref=e1000]:
+                      - listitem [ref=e1001]:
+                        - link "'성공'이란 말을 이 말로 대체하면 기적이 일어납니다 | 존 노 테너 재생" [ref=e1002] [cursor=pointer]:
+                          - /url: https://vibe.naver.com/audio_player?curationId=1190&contentId=CH_315_EP_1090&audioContentId=CH_315_EP_1090
+                          - strong [ref=e1004]: "'성공'이란 말을 이 말로 대체하면 기적이 일어납니다 | 존 노 테너"
+                          - generic [ref=e1005]: 재생
+                      - listitem [ref=e1007]:
+                        - link "방구석 연주로 세계를 울리다 | 오현지 가야금 연주자 재생" [ref=e1008] [cursor=pointer]:
+                          - /url: https://vibe.naver.com/audio_player?curationId=1190&contentId=CH_315_EP_1032&audioContentId=CH_315_EP_1032
+                          - strong [ref=e1010]: 방구석 연주로 세계를 울리다 | 오현지 가야금 연주자
+                          - generic [ref=e1011]: 재생
+                      - listitem [ref=e1013]:
+                        - link "나를 회복하고 세상과 만나게 하는 삶의 리허설 | 남인우 극단 북새통 상임연출 재생" [ref=e1014] [cursor=pointer]:
+                          - /url: https://vibe.naver.com/audio_player?curationId=1190&contentId=CH_315_EP_1051&audioContentId=CH_315_EP_1051
+                          - strong [ref=e1016]: 나를 회복하고 세상과 만나게 하는 삶의 리허설 | 남인우 극단 북새통 상임연출
+                          - generic [ref=e1017]: 재생
+                - generic [ref=e1019]:
+                  - generic [ref=e1020]:
+                    - generic [ref=e1021]:
+                      - link "영어사전" [ref=e1022] [cursor=pointer]:
+                        - /url: https://en.dict.naver.com/#/mini/main
+                      - link "Did you attend the conference in New York last Tuesday?" [ref=e1023] [cursor=pointer]:
+                        - /url: https://learn.dict.naver.com/m/endic/today/conversation.dict
+                    - link "단어 검색하기" [ref=e1026] [cursor=pointer]:
+                      - /url: https://en.dict.naver.com/#/mini/main
+                  - link "papago 번역하기" [ref=e1027] [cursor=pointer]:
+                    - /url: https://papago.naver.com/?sk=ko&st=&tk=en
+                    - generic [ref=e1028]: papago
+                    - generic [ref=e1030]: 번역하기
+                  - link "메모 로그인하기" [ref=e1031] [cursor=pointer]:
+                    - /url: https://nid.naver.com/nidlogin.login?mode=form&url=https://www.naver.com/?to=widget
+                    - generic [ref=e1032]: 메모
+                    - list [ref=e1035]:
+                      - listitem [ref=e1036]
+                      - listitem [ref=e1037]
+                      - listitem [ref=e1038]:
+                        - generic [ref=e1039]: 로그인하기
+              - button "다음 페이지" [ref=e1040] [cursor=pointer]
+            - link [ref=e1042] [cursor=pointer]:
+              - /url: https://m.naver.com/
+              - strong [ref=e1043]: 모바일 네이버 메인
+              - text: 열기
+    - contentinfo [ref=e1046]:
+      - generic [ref=e1047]:
+        - generic [ref=e1048]:
+          - iframe [ref=e1051]:
+            - link "광고 이미지 광고 월드비전 장윤주가 선택한 키링 어디서 파는 걸까? 이건 특별한 의미가 있어요." [ref=f4e3] [cursor=pointer]:
+              - /url: https://siape.veta.naver.com/fxclick?eu=EU10043568&calp=-&oj=cQgn6aire5MOnC6WBYbmb41dfRmhn6NutwOU%2FnjIfPfEBuML%2BqEJJ2x%2FhcG054wn2qsQsVX0oX13tTsvTMQ9CFmHyMhITp%2FCcfTzuXiOX1RAy5m3sClyMw&ac=9316592&src=8221092&br=4979589&evtcd=P901&x_ti=1529&tb=&oid=&sid1=&sid2=&rk=paCR3s74BCrM5jVjQn9WBA&eltts=5pWC3gJL7L4UJcICqiFdvA%3D%3D&brs=Y&
+              - generic [ref=f4e4]:
+                - img "광고 이미지" [ref=f4e5]
+                - generic "광고" [ref=f4e6]
+              - generic [ref=f4e7]:
+                - strong [ref=f4e8]: 월드비전
+                - strong [ref=f4e9]: 장윤주가 선택한 키링
+                - generic [ref=f4e10]: 어디서 파는 걸까?
+                - generic [ref=f4e11]: 이건 특별한 의미가 있어요.
+          - iframe [ref=e1054]:
+            - link "광고 이미지 광고 초록우산 1만원 후원 시 6만원으로 적립 만 18세가 되어 보육원에서 나오는 아이들" [ref=f5e3] [cursor=pointer]:
+              - /url: https://siape.veta.naver.com/fxclick?eu=EU10043569&calp=-&oj=cQgn6aire5Nx8cfS51TDuo1dfRmhn6NutwOU%2FnjIfPfEBuML%2BqEJJ2x%2FhcG054wn2qsQsVX0oX13tTsvTMQ9CFmHyMhITp%2FCcfTzuXiOX1RAy5m3sClyMw&ac=9316130&src=8219862&br=4979130&evtcd=P901&x_ti=1529&tb=&oid=&sid1=&sid2=&rk=7ObiCeZeQ0O0qB7fJ77_qQ&eltts=5pWC3gJL7L4UJcICqiFdvA%3D%3D&brs=Y&
+              - generic [ref=f5e4]:
+                - img "광고 이미지" [ref=f5e5]
+                - generic "광고" [ref=f5e6]
+              - generic [ref=f5e7]:
+                - strong [ref=f5e8]: 초록우산
+                - strong [ref=f5e9]: 1만원 후원 시 6만원으로 적립
+                - generic [ref=f5e10]: 만 18세가 되어
+                - generic [ref=f5e11]: 보육원에서 나오는 아이들
+          - iframe [ref=e1057]:
+            - link "광고 이미지 네이버 커넥트재단 아이디어만으로 시작하는 법 사업기획 마인드셋 ~ 구체화 9/15(화) 19시 무료라이브" [ref=f6e3] [cursor=pointer]:
+              - /url: https://siape.veta.naver.com/fxclick?eu=EU10043570&calp=-&oj=9gPJTdEI4gHf40n3ktJ9%2FI1dfRmhn6NutwOU%2FnjIfPfEBuML%2BqEJJ2x%2FhcG054wn2qsQsVX0oX13tTsvTMQ9CFmHyMhITp%2FCcfTzuXiOX1RAy5m3sClyMw&ac=9316981&src=8221575&br=4979833&evtcd=P901&x_ti=1507&tb=&oid=&sid1=&sid2=&rk=kEpNJry6TnUFfb6u7zFIfw&eltts=5pWC3gJL7L4UJcICqiFdvA%3D%3D&brs=Y&
+              - img "광고 이미지" [ref=f6e5]
+              - generic [ref=f6e6]:
+                - strong [ref=f6e7]: 네이버 커넥트재단
+                - strong [ref=f6e8]: 아이디어만으로 시작하는 법
+                - generic [ref=f6e9]: 사업기획 마인드셋 ~ 구체화
+                - generic [ref=f6e10]: 9/15(화) 19시 무료라이브
+        - generic [ref=e1058]:
+          - generic [ref=e1059]:
+            - heading [level=3] [ref=e1060]:
+              - link "공지사항" [ref=e1061] [cursor=pointer]:
+                - /url: https://www.naver.com/NOTICE
+            - link "네이버 ‘개인정보 처리방침’ 변경에 대한 안내 말씀드립니다." [ref=e1062] [cursor=pointer]:
+              - /url: https://www.naver.com/NOTICE/wwwpc/33628?lang=ko&sectionId=
+          - link "서비스 전체보기" [ref=e1063] [cursor=pointer]:
+            - /url: /more.html
+        - generic [ref=e1064]:
+          - generic [ref=e1065]:
+            - generic [ref=e1066]:
+              - heading "Partners" [level=3] [ref=e1067]
+              - link "네이버 광고주센터" [ref=e1068] [cursor=pointer]:
+                - /url: https://naver.me/FJO6jm6w
+              - link "스마트스토어센터" [ref=e1069] [cursor=pointer]:
+                - /url: https://naver.me/GsBOYhte
+              - link "스마트플레이스" [ref=e1070] [cursor=pointer]:
+                - /url: https://naver.me/FRoWm3Ei
+              - link "비즈니스 스쿨" [ref=e1071] [cursor=pointer]:
+                - /url: https://naver.me/5K6OWByt
+              - link "네이버 임팩트" [ref=e1072] [cursor=pointer]:
+                - /url: https://naver.me/551yFEFD
+            - generic [ref=e1073]:
+              - heading "Developers" [level=3] [ref=e1074]
+              - link "네이버 개발자 센터" [ref=e1075] [cursor=pointer]:
+                - /url: https://developers.naver.com/
+              - link "오픈 API" [ref=e1076] [cursor=pointer]:
+                - /url: https://developers.naver.com/docs/common/openapiguide/#/apilist.md
+              - link "오픈소스" [ref=e1077] [cursor=pointer]:
+                - /url: https://naver.github.io/
+              - link "네이버 D2" [ref=e1078] [cursor=pointer]:
+                - /url: https://d2.naver.com/
+              - link "네이버 D2SF" [ref=e1079] [cursor=pointer]:
+                - /url: http://d2startup.com/
+              - link "네이버 랩스" [ref=e1080] [cursor=pointer]:
+                - /url: https://www.naverlabs.com/
+          - generic [ref=e1081]:
+            - generic [ref=e1082]:
+              - link [ref=e1083] [cursor=pointer]:
+                - /url: http://whale.naver.com/
+                - img "웨일 브라우저" [ref=e1084]
+              - generic [ref=e1085]:
+                - strong [ref=e1086]: 웨일 브라우저
+                - link "이용안내" [ref=e1087] [cursor=pointer]:
+                  - /url: http://whale.naver.com/
+            - generic [ref=e1088]:
+              - link [ref=e1089] [cursor=pointer]:
+                - /url: https://www.navercorp.com
+                - img "기업 사이트" [ref=e1090]
+              - generic [ref=e1091]:
+                - strong [ref=e1092]: 기업 사이트
+                - link "바로가기" [ref=e1093] [cursor=pointer]:
+                  - /url: https://www.navercorp.com
+        - generic [ref=e1094]:
+          - heading "네이버 정책 및 약관" [level=3] [ref=e1095]
+          - list [ref=e1096]:
+            - listitem [ref=e1097]:
+              - link "회사소개" [ref=e1098] [cursor=pointer]:
+                - /url: https://www.navercorp.com/
+            - listitem [ref=e1099]:
+              - link "인재채용" [ref=e1100] [cursor=pointer]:
+                - /url: https://recruit.navercorp.com/
+            - listitem [ref=e1101]:
+              - link "제휴제안" [ref=e1102] [cursor=pointer]:
+                - /url: https://www.navercorp.com/company/partnership
+            - listitem [ref=e1103]:
+              - link "이용약관" [ref=e1104] [cursor=pointer]:
+                - /url: https://www.naver.com/policy/service.html
+            - listitem [ref=e1105]:
+              - link [ref=e1106] [cursor=pointer]:
+                - /url: https://www.naver.com/policy/privacy.html
+                - strong [ref=e1107]: 개인정보처리방침
+            - listitem [ref=e1108]:
+              - link "청소년보호정책" [ref=e1109] [cursor=pointer]:
+                - /url: https://www.naver.com/policy/youthpolicy.html
+            - listitem [ref=e1110]:
+              - link "네이버 정책" [ref=e1111] [cursor=pointer]:
+                - /url: https://policy.naver.com/policy/service_group.html
+            - listitem [ref=e1112]:
+              - link "고객센터" [ref=e1113] [cursor=pointer]:
+                - /url: https://help.naver.com/
+          - link "ⓒ NAVER Corp." [ref=e1115] [cursor=pointer]:
+            - /url: https://www.navercorp.com/
