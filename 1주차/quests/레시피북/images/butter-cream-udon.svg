@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="버터크림우동 일러스트">
+  <rect width="800" height="500" fill="#F7F1E6"/>
+  <ellipse cx="400" cy="330" rx="300" ry="130" fill="#EBE2D2"/>
+  <ellipse cx="400" cy="322" rx="272" ry="118" fill="#FFFFFF"/>
+  <ellipse cx="400" cy="322" rx="272" ry="118" fill="none" stroke="#DFD6C6" stroke-width="4"/>
+  <ellipse cx="400" cy="318" rx="216" ry="88" fill="#F6E7BE"/>
+
+  <!-- udon noodles -->
+  <g fill="none" stroke="#FBF3DC" stroke-width="22" stroke-linecap="round">
+    <path d="M280 300 q40-60 90-20 q50 40 100-10 q40-30 70 10"/>
+    <path d="M290 330 q50-50 100-10 q50 30 90-10 q30-20 60 6"/>
+    <path d="M320 270 q50-30 90-6 q40 20 80-6"/>
+  </g>
+  <g fill="none" stroke="#EAD9A8" stroke-width="3" stroke-linecap="round" opacity="0.7">
+    <path d="M280 296 q40-60 90-20 q50 40 100-10 q40-30 70 10"/>
+    <path d="M290 326 q50-50 100-10 q50 30 90-10 q30-20 60 6"/>
+  </g>
+
+  <!-- bacon -->
+  <g fill="#C8644A">
+    <rect x="340" y="255" width="40" height="14" rx="5" transform="rotate(-15 360 262)"/>
+    <rect x="440" y="290" width="40" height="14" rx="5" transform="rotate(20 460 297)"/>
+    <rect x="395" y="320" width="36" height="13" rx="5" transform="rotate(-8 413 326)"/>
+  </g>
+  <g fill="#F2C8B8"><rect x="345" y="259" width="12" height="5" rx="2" transform="rotate(-15 360 262)"/></g>
+
+  <!-- cheese & parsley -->
+  <rect x="400" y="236" width="48" height="30" rx="4" fill="#F5C842" transform="rotate(12 424 251)"/>
+  <g fill="#4A9146" opacity="0.9">
+    <circle cx="330" cy="318" r="4"/><circle cx="470" cy="270" r="4"/><circle cx="380" cy="300" r="4"/><circle cx="500" cy="318" r="4"/><circle cx="420" cy="345" r="4"/>
+  </g>
+  <g fill="#3A3A3A" opacity="0.6">
+    <circle cx="360" cy="290" r="2"/><circle cx="450" cy="320" r="2"/><circle cx="410" cy="270" r="2"/>
+  </g>
+</svg>

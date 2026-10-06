@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="김치참치볶음밥 일러스트">
+  <rect width="800" height="500" fill="#F7F1E6"/>
+  <ellipse cx="400" cy="330" rx="300" ry="130" fill="#EBE2D2"/>
+  <ellipse cx="400" cy="322" rx="272" ry="118" fill="#FFFFFF"/>
+  <ellipse cx="400" cy="322" rx="272" ry="118" fill="none" stroke="#DFD6C6" stroke-width="4"/>
+  <ellipse cx="400" cy="318" rx="216" ry="88" fill="#FBF8F2"/>
+
+  <!-- rice mound -->
+  <path d="M230 320 q10-110 170-120 q160 10 170 120 q-170 70-340 0z" fill="#E8744A"/>
+  <path d="M260 310 q16-80 140-90 q124 10 140 90 q-140 50-280 0z" fill="#F08A5C" opacity="0.8"/>
+  <g fill="#C94A2E" opacity="0.8">
+    <ellipse cx="330" cy="260" rx="22" ry="10" transform="rotate(-15 330 260)"/>
+    <ellipse cx="440" cy="280" rx="24" ry="11" transform="rotate(12 440 280)"/>
+    <ellipse cx="390" cy="230" rx="18" ry="9"/>
+  </g>
+  <g fill="#F4D58A">
+    <ellipse cx="360" cy="285" rx="20" ry="10" transform="rotate(10 360 285)"/>
+    <ellipse cx="470" cy="250" rx="18" ry="9" transform="rotate(-20 470 250)"/>
+  </g>
+  <g fill="#6BA04A">
+    <circle cx="300" cy="290" r="5"/><circle cx="420" cy="250" r="5"/><circle cx="500" cy="300" r="5"/>
+  </g>
+
+  <!-- fried egg -->
+  <ellipse cx="400" cy="212" rx="64" ry="32" fill="#FFFFFF"/>
+  <circle cx="400" cy="208" r="22" fill="#F5B82E"/>
+  <circle cx="393" cy="201" r="6" fill="#FBD772" opacity="0.8"/>
+
+  <!-- sesame -->
+  <g fill="#8A6A3B" opacity="0.8">
+    <circle cx="350" cy="240" r="2.5"/><circle cx="450" cy="230" r="2.5"/><circle cx="480" cy="285" r="2.5"/><circle cx="330" cy="300" r="2.5"/>
+  </g>
+</svg>

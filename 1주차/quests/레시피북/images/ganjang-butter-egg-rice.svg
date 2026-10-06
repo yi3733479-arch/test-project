@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="간장버터 달걀덮밥 일러스트">
+  <rect width="800" height="500" fill="#F6EFE2"/>
+  <circle cx="400" cy="255" r="215" fill="#E7DCC9"/>
+
+  <!-- side plate with spam -->
+  <circle cx="680" cy="110" r="70" fill="#FBFAF3"/>
+  <circle cx="680" cy="110" r="70" fill="none" stroke="#E2D8C3" stroke-width="4"/>
+  <g>
+    <rect x="636" y="76" width="40" height="34" rx="5" fill="#E58E86" transform="rotate(-12 656 93)"/>
+    <rect x="672" y="92" width="38" height="34" rx="5" fill="#DE7F77" transform="rotate(10 691 109)"/>
+    <rect x="648" y="114" width="36" height="30" rx="5" fill="#E58E86" transform="rotate(6 666 129)"/>
+    <g fill="#C26A62" opacity="0.6">
+      <rect x="642" y="82" width="28" height="6" rx="3" transform="rotate(-12 656 85)"/>
+      <rect x="678" y="98" width="26" height="6" rx="3" transform="rotate(10 691 101)"/>
+    </g>
+  </g>
+
+  <!-- bowl -->
+  <circle cx="380" cy="255" r="196" fill="#B9532F" opacity="0.0"/>
+  <circle cx="380" cy="250" r="196" fill="#E9E4D8"/>
+  <circle cx="380" cy="250" r="190" fill="#FFFFFF"/>
+  <circle cx="380" cy="250" r="176" fill="#EFEADD"/>
+
+  <!-- rice -->
+  <circle cx="380" cy="250" r="164" fill="#FBFAF3"/>
+  <g fill="#EAE6D8">
+    <ellipse cx="270" cy="150" rx="13" ry="8" transform="rotate(-25 270 150)"/>
+    <ellipse cx="322" cy="112" rx="12" ry="7" transform="rotate(15 322 112)"/>
+    <ellipse cx="238" cy="214" rx="12" ry="7" transform="rotate(40 238 214)"/>
+    <ellipse cx="480" cy="124" rx="13" ry="8" transform="rotate(30 480 124)"/>
+    <ellipse cx="528" cy="190" rx="12" ry="7" transform="rotate(-20 528 190)"/>
+    <ellipse cx="248" cy="330" rx="12" ry="7" transform="rotate(-40 248 330)"/>
+    <ellipse cx="520" cy="338" rx="13" ry="8" transform="rotate(25 520 338)"/>
+    <ellipse cx="380" cy="388" rx="12" ry="7" transform="rotate(5 380 388)"/>
+  </g>
+
+  <!-- soy sauce glaze pooling on rice -->
+  <g fill="#8A4B24" opacity="0.55">
+    <path d="M232 262 q-14 20 4 40 q22 14 34-8 q-2-26-16-36z"/>
+    <path d="M492 156 q22-6 36 14 q4 22-18 28 q-22-8-18-42z"/>
+    <path d="M300 372 q28 10 52 0 q-6 22-26 22 q-20-2-26-22z"/>
+  </g>
+
+  <!-- fried egg white (crispy edge) -->
+  <path d="M244 232 q-6-58 52-82 q58-30 112-8 q64 16 82 70 q18 58-26 96 q-30 54-92 52 q-60 14-100-26 q-40-26-28-102z" fill="#FFFDF6"/>
+  <path d="M244 232 q-6-58 52-82 q58-30 112-8 q64 16 82 70 q18 58-26 96 q-30 54-92 52 q-60 14-100-26 q-40-26-28-102z" fill="none" stroke="#D9923A" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M250 232 q-4-52 48-74 q54-26 104-8 q58 14 74 62" fill="none" stroke="#F3E3BD" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+  <!-- browned crispy bubbles -->
+  <g fill="#E8B766" opacity="0.7">
+    <circle cx="270" cy="290" r="7"/><circle cx="296" cy="318" r="5"/>
+    <circle cx="480" cy="316" r="6"/><circle cx="500" cy="196" r="5"/>
+  </g>
+
+  <!-- two yolks -->
+  <circle cx="338" cy="230" r="44" fill="#F29A1F"/>
+  <circle cx="338" cy="230" r="44" fill="none" stroke="#D97F0E" stroke-width="2.5"/>
+  <ellipse cx="324" cy="214" rx="15" ry="9" fill="#FFD27A" opacity="0.85" transform="rotate(-25 324 214)"/>
+  <circle cx="440" cy="246" r="44" fill="#F5A21F"/>
+  <circle cx="440" cy="246" r="44" fill="none" stroke="#D97F0E" stroke-width="2.5"/>
+  <ellipse cx="426" cy="230" rx="15" ry="9" fill="#FFD27A" opacity="0.85" transform="rotate(-25 426 230)"/>
+
+  <!-- butter pat melting -->
+  <g transform="rotate(-10 390 190)">
+    <rect x="362" y="170" width="52" height="34" rx="6" fill="#FFE27A"/>
+    <rect x="362" y="170" width="52" height="12" rx="6" fill="#FFF0A8"/>
+    <ellipse cx="392" cy="208" rx="34" ry="7" fill="#FFD84F" opacity="0.6"/>
+  </g>
+
+  <!-- soy glaze drizzle over egg -->
+  <path d="M290 300 q22-18 44 0 t44 0 t44 0" fill="none" stroke="#6B3A1C" stroke-width="7" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- seaweed strips -->
+  <g fill="#243A2C">
+    <rect x="300" y="196" width="54" height="8" rx="4" transform="rotate(-14 300 196)"/>
+    <rect x="404" y="214" width="50" height="8" rx="4" transform="rotate(18 404 214)"/>
+    <rect x="352" y="262" width="46" height="8" rx="4" transform="rotate(-6 352 262)"/>
+    <rect x="426" y="278" width="40" height="8" rx="4" transform="rotate(30 426 278)"/>
+    <rect x="316" y="172" width="38" height="7" rx="3.5" transform="rotate(34 316 172)"/>
+  </g>
+
+  <!-- spring onion rings -->
+  <g fill="none" stroke="#4C9A4A" stroke-width="6">
+    <circle cx="300" cy="170" r="9"/>
+    <circle cx="470" cy="196" r="9"/>
+    <circle cx="380" cy="300" r="9"/>
+    <circle cx="274" cy="256" r="8"/>
+    <circle cx="496" cy="276" r="8"/>
+    <circle cx="420" cy="172" r="8"/>
+  </g>
+
+  <!-- sesame -->
+  <g fill="#E9DBB4" stroke="#C9B47F" stroke-width="1">
+    <ellipse cx="350" cy="190" rx="6" ry="3.5" transform="rotate(30 350 190)"/>
+    <ellipse cx="394" cy="262" rx="6" ry="3.5" transform="rotate(-20 394 262)"/>
+    <ellipse cx="462" cy="226" rx="6" ry="3.5" transform="rotate(12 462 226)"/>
+    <ellipse cx="320" cy="282" rx="6" ry="3.5" transform="rotate(-35 320 282)"/>
+    <ellipse cx="446" cy="304" rx="6" ry="3.5" transform="rotate(48 446 304)"/>
+    <ellipse cx="288" cy="226" rx="6" ry="3.5" transform="rotate(8 288 226)"/>
+    <ellipse cx="376" cy="148" rx="6" ry="3.5" transform="rotate(-12 376 148)"/>
+  </g>
+
+  <!-- chopsticks -->
+  <g transform="rotate(-28 660 400)">
+    <rect x="580" y="340" width="230" height="13" rx="6" fill="#B9793F"/>
+    <rect x="580" y="366" width="230" height="13" rx="6" fill="#A96B34"/>
+  </g>
+</svg>
